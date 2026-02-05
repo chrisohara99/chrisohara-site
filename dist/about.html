@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Chris O'Hara</title>
+    <meta name="description" content="Chris O'Hara - Global product marketing leader, author, and data storytelling expert.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --text: #333;
+            --text-light: #666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.8; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 16px 0; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .page-header { padding: 140px 0 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; }
+        .page-header h1 { font-size: 3rem; color: white; margin-bottom: 16px; }
+        .page-header p { opacity: 0.9; font-size: 1.2rem; }
+        
+        section { padding: 80px 0; }
+        section.alt { background: var(--bg-alt); }
+        
+        .about-content { display: grid; grid-template-columns: 350px 1fr; gap: 60px; align-items: start; }
+        .about-image img { width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .about-text h2 { font-size: 2rem; margin-bottom: 24px; color: var(--primary); }
+        .about-text p { margin-bottom: 20px; font-size: 1.05rem; color: var(--text); }
+        .about-text p.lead { font-size: 1.2rem; color: var(--text-light); margin-bottom: 30px; }
+        
+        .career-timeline { max-width: 800px; margin: 0 auto; }
+        .timeline-item { display: flex; gap: 30px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-date { min-width: 140px; font-weight: 600; color: var(--accent); }
+        .timeline-content h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--primary); }
+        .timeline-content .company { color: var(--text-light); margin-bottom: 12px; }
+        .timeline-content p { color: var(--text); font-size: 0.95rem; }
+        
+        footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+        footer p { opacity: 0.7; }
+        
+        @media (max-width: 900px) {
+            .about-content { grid-template-columns: 1fr; }
+            .about-image { max-width: 300px; margin: 0 auto; }
+            .timeline-item { flex-direction: column; gap: 10px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Chris O'Hara</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>About Me</h1>
+            <p>Building the future of customer intelligence</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets/images/chris-ohara.jpg" alt="Chris O'Hara">
+                </div>
+                <div class="about-text">
+                    <p class="lead">I'm a global product marketing leader specializing in data storytelling — helping companies understand, articulate, and capitalize on the power of customer data.</p>
+                    
+                    <p>With over two decades in marketing technology, I've built and scaled go-to-market strategies for some of the most transformative data platforms in the industry. From early-stage startups to enterprise giants, my focus has always been the same: connecting the dots between complex technology and real business outcomes.</p>
+                    
+                    <p>Currently, I serve as CMSO for Planning, Analytics, and Intelligent Applications at SAP, where I lead strategy, marketing, and commercialization for extended planning and analytics within SAP Business Data Cloud. Previously, I spent nearly six years at Salesforce as VP of Global Product Marketing, leading the Data & Identity portfolio and helping drive $2.3B in pipeline.</p>
+                    
+                    <p>I'm also the author of two award-winning business books — <em>Customer Data Platforms</em> (Wiley) and <em>Data-Driven</em> (McGraw Hill, Axiom Silver Medal winner) — as well as six books on food and drink published by Random House.</p>
+                    
+                    <p>When I'm not thinking about data, you'll find me perfecting my rib recipe, mixing cocktails, or cheering on my son at tennis tournaments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 50px; color: var(--primary);">Career Journey</h2>
+            <div class="career-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 – Present</div>
+                    <div class="timeline-content">
+                        <h3>CMSO, Planning, Analytics & Intelligent Apps</h3>
+                        <div class="company">SAP · Business Data Cloud</div>
+                        <p>Leading strategy, marketing, GTM, pricing, and commercialization for xP&A and Intelligent Applications. Pioneering AI tools deployment across product marketing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2016 – 2022</div>
+                    <div class="timeline-content">
+                        <h3>Vice President, Global Product Marketing</h3>
+                        <div class="company">Salesforce</div>
+                        <p>Led the Data & Identity portfolio including Audience Studio (DMP), Customer 360 Audiences (CDP), and Interaction Studio. Covered 600+ client meetings touching $2.3B in ACV pipeline.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2014 – 2016</div>
+                    <div class="timeline-content">
+                        <h3>Head of Data Strategy & Product Marketing</h3>
+                        <div class="company">Krux (acquired by Salesforce)</div>
+                        <p>Sold largest deals including L'Oréal, AB-InBev, Heineken, Coca-Cola, Campbell's Soup. Positioned company for Salesforce acquisition.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2013 – 2014</div>
+                    <div class="timeline-content">
+                        <h3>CRO & Co-Founder</h3>
+                        <div class="company">Bionic Advertising Systems</div>
+                        <p>Led revenue, business development, and marketing for programmatic direct media planning SaaS platform. Initiated 50+ agency deals in 14 months.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Earlier</div>
+                    <div class="timeline-content">
+                        <h3>Executive Leadership Roles</h3>
+                        <div class="company">Looksmart · TRAFFIQ · Reviewed.com · Nielsen · Reed Elsevier</div>
+                        <p>CRO, SVP, and VP roles across ad tech, media, and publishing. Consistent track record of revenue growth and successful exits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chris O'Hara. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

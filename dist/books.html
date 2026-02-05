@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books | Chris O'Hara</title>
+    <meta name="description" content="Books by Chris O'Hara - Customer Data Platforms, Data Driven, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --text: #333;
+            --text-light: #666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.8; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 16px 0; }
+        nav .container { max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .page-header { padding: 140px 0 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; }
+        .page-header h1 { font-size: 3rem; color: white; margin-bottom: 16px; }
+        .page-header p { opacity: 0.9; font-size: 1.2rem; }
+        
+        section { padding: 80px 0; }
+        section.alt { background: var(--bg-alt); }
+        
+        .section-title { font-size: 2rem; color: var(--primary); margin-bottom: 40px; text-align: center; }
+        
+        .book-feature { display: grid; grid-template-columns: 250px 1fr; gap: 50px; align-items: start; margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--border); }
+        .book-feature:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .book-feature img { width: 100%; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .book-feature h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 8px; }
+        .book-feature .meta { color: var(--accent); font-weight: 500; margin-bottom: 16px; }
+        .book-feature .award { background: #ffd700; color: #333; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 16px; }
+        .book-feature p { margin-bottom: 16px; color: var(--text); }
+        .book-feature ul { padding-left: 20px; margin-bottom: 20px; color: var(--text); }
+        .book-feature li { margin-bottom: 8px; }
+        
+        .btn { display: inline-block; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #d63850; opacity: 1; }
+        
+        .other-books { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .book-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid var(--border); text-align: center; padding: 30px 20px; }
+        .book-card img { width: 120px; height: auto; border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .book-card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 8px; }
+        .book-card p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 16px; }
+        
+        footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+        footer p { opacity: 0.7; }
+        
+        @media (max-width: 768px) {
+            .book-feature { grid-template-columns: 1fr; text-align: center; }
+            .book-feature img { max-width: 200px; margin: 0 auto; }
+            .other-books { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container" style="max-width: 1200px;">
+            <a href="index.html" class="logo">Chris O'Hara</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Books</h1>
+            <p>Thought leadership on customer data, marketing technology, and the finer things in life</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Business & Marketing</h2>
+            
+            <div class="book-feature">
+                <img src="https://m.media-amazon.com/images/I/41r6F4VfURL._SY445_SX342_.jpg" alt="Customer Data Platforms">
+                <div>
+                    <h3>Customer Data Platforms</h3>
+                    <div class="meta">Wiley · 2020</div>
+                    <p><strong>#1 Amazon Best Seller in Business Marketing</strong></p>
+                    <p>Marketers face a stark dilemma: customers demand deep personalization, but are increasingly wary of sharing personal data. Customer Data Platforms offers a solution — a comprehensive guide to capturing, unifying, activating, and analyzing customer data while respecting privacy.</p>
+                    <p>This book covers:</p>
+                    <ul>
+                        <li>Understanding the problems of managing customer data</li>
+                        <li>What CDPs do (and don't do)</li>
+                        <li>Building a safe, compliant first-party data asset</li>
+                        <li>Leveraging AI and machine learning for personalization</li>
+                        <li>Orchestrating modern customer journeys in real-time</li>
+                    </ul>
+                    <a href="https://www.amazon.com/Customer-Data-Platforms-personalization-privacy-compliant/dp/1119790115" class="btn btn-primary" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <div class="book-feature">
+                <img src="https://m.media-amazon.com/images/I/51Yx7DhZxyL._SY445_SX342_.jpg" alt="Data Driven">
+                <div>
+                    <h3>Data Driven</h3>
+                    <div class="meta">McGraw Hill · 2018</div>
+                    <span class="award">🏆 Axiom Silver Medal – Business Technology</span>
+                    <p>The indispensable guide to data-powered marketing from the team behind the data management platform that helps fuel Salesforce.</p>
+                    <p>Digital technology, social media, and e-commerce have radically changed how consumers access information and make purchases. Using cloud, mobile, social, IoT, and AI, we have more data about customers than ever before. <em>Data-Driven</em> shows how to harness that data to build lasting customer relationships.</p>
+                    <ul>
+                        <li>The three principles for building a successful data strategy</li>
+                        <li>The five sources of data-driven power</li>
+                        <li>Seven forecasts for the future of marketing</li>
+                    </ul>
+                    <p><em>"There has never been a more bewildering—or exciting—time to be a brand, and Chavez, O'Hara, and Vaidya are the smartest guides we've got."</em> — Martin Kihn, VP Research, Gartner</p>
+                    <a href="https://www.amazon.com/Data-Driven-Harnessing-Analytics-Marketing/dp/1260441539" class="btn btn-primary" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt">
+        <div class="container">
+            <h2 class="section-title">Food & Drink</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Not all my writing is about data. I've also authored six books on food and drink, published by Random House. Most are out of print but available from used book sellers.</p>
+            
+            <div class="other-books">
+                <div class="book-card">
+                    <img src="https://m.media-amazon.com/images/I/51dMUX93IVL._SY445_SX342_.jpg" alt="The Bloody Mary">
+                    <h3>The Bloody Mary</h3>
+                    <p>The complete history, variations, and secrets of the world's most complex cocktail.</p>
+                    <a href="https://www.amazon.com/Bloody-Mary-Lore-Recipes-Drinks/dp/1592282474" class="btn btn-primary" target="_blank">Find on Amazon</a>
+                </div>
+                
+                <div class="book-card">
+                    <img src="https://m.media-amazon.com/images/I/51PCPXP7VHL._SY445_SX342_.jpg" alt="Ribs">
+                    <h3>Ribs</h3>
+                    <p>A connoisseur's guide to barbecuing and grilling, from Carolina baby-backs to Kansas City-style.</p>
+                    <a href="https://www.amazon.com/Ribs-Christopher-B-OHara/dp/0609610708" class="btn btn-primary" target="_blank">Find on Amazon</a>
+                </div>
+                
+                <div class="book-card">
+                    <img src="https://m.media-amazon.com/images/I/51GMVPC5WNL._SY445_SX342_.jpg" alt="The Ultimate Chili Book">
+                    <h3>The Ultimate Chili Book</h3>
+                    <p>The definitive guide to "the ultimate bowl of red" with 30+ recipes and chili lore.</p>
+                    <a href="https://www.amazon.com/Ultimate-Chili-Book-Christopher-OHara/dp/1592281494" class="btn btn-primary" target="_blank">Find on Amazon</a>
+                </div>
+                
+                <div class="book-card">
+                    <img src="https://m.media-amazon.com/images/I/41K4BV0WFFL._SY445_SX342_.jpg" alt="Hot Toddies">
+                    <h3>Hot Toddies</h3>
+                    <p>Classic winter drinks from spiced cider to champagne punch. Available on Kindle!</p>
+                    <a href="https://www.amazon.com/Hot-Toddies-Mulled-Wine-Buttered/dp/0609610724" class="btn btn-primary" target="_blank">Find on Amazon</a>
+                </div>
+                
+                <div class="book-card">
+                    <img src="https://m.media-amazon.com/images/I/51X2FYC22YL._SY445_SX342_.jpg" alt="Wing It">
+                    <h3>Wing It!</h3>
+                    <p>The ultimate guide to chicken wings — recipes, techniques, and sauces.</p>
+                    <a href="https://www.amazon.com/Wing-Recipes-Techniques-Accompaniments-Connoisseur/dp/1592281486" class="btn btn-primary" target="_blank">Find on Amazon</a>
+                </div>
+                
+                <div class="book-card">
+                    <img src="https://m.media-amazon.com/images/I/51MJT9J6SSL._SY445_SX342_.jpg" alt="Great American Beer">
+                    <h3>Great American Beer</h3>
+                    <p>A celebration of American craft beer and brewing culture.</p>
+                    <a href="https://www.amazon.com/Great-American-Beer-Craft-Brews/dp/0609610716" class="btn btn-primary" target="_blank">Find on Amazon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chris O'Hara. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

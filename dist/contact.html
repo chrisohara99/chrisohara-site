@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Chris O'Hara</title>
+    <meta name="description" content="Get in touch with Chris O'Hara.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --text: #333;
+            --text-light: #666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.8; }
+        .container { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 16px 0; }
+        nav .container { max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .page-header { padding: 140px 0 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; }
+        .page-header h1 { font-size: 3rem; color: white; margin-bottom: 16px; }
+        .page-header p { opacity: 0.9; font-size: 1.2rem; }
+        
+        section { padding: 80px 0; }
+        
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+        .contact-card { background: var(--bg-alt); padding: 40px; border-radius: 12px; text-align: center; }
+        .contact-card h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 12px; }
+        .contact-card p { color: var(--text-light); margin-bottom: 16px; }
+        .contact-card a.contact-link { font-size: 1.1rem; font-weight: 600; color: var(--accent); }
+        
+        .contact-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        
+        form { max-width: 500px; margin: 0 auto; }
+        .form-group { margin-bottom: 24px; }
+        label { display: block; font-weight: 500; margin-bottom: 8px; color: var(--text); }
+        input, textarea { width: 100%; padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; font-family: inherit; transition: border-color 0.2s; }
+        input:focus, textarea:focus { outline: none; border-color: var(--accent); }
+        textarea { min-height: 150px; resize: vertical; }
+        
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s; border: none; cursor: pointer; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #d63850; }
+        .btn-block { width: 100%; }
+        
+        footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+        footer p { opacity: 0.7; }
+        
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container" style="max-width: 1200px;">
+            <a href="index.html" class="logo">Chris O'Hara</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>I'd love to hear from you</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me professionally</p>
+                    <a href="https://www.linkedin.com/in/chrisohara1/" class="contact-link" target="_blank">linkedin.com/in/chrisohara1</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>For speaking inquiries and collaborations</p>
+                    <a href="mailto:chrisohara1968@gmail.com" class="contact-link">chrisohara1968@gmail.com</a>
+                </div>
+            </div>
+            
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary);">Send a Message</h2>
+            
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p style="display: none;">
+                    <label>Don't fill this out: <input name="bot-field"></label>
+                </p>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chris O'Hara. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

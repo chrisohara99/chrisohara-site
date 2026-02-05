@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking | Chris O'Hara</title>
+    <meta name="description" content="Chris O'Hara - Speaking engagements, podcasts, and media appearances.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --text: #333;
+            --text-light: #666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.8; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 16px 0; }
+        nav .container { max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .page-header { padding: 140px 0 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; }
+        .page-header h1 { font-size: 3rem; color: white; margin-bottom: 16px; }
+        .page-header p { opacity: 0.9; font-size: 1.2rem; }
+        
+        section { padding: 80px 0; }
+        section.alt { background: var(--bg-alt); }
+        
+        .section-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 30px; }
+        
+        .speaking-topics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 60px; }
+        .topic-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+        .topic-card h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 12px; }
+        .topic-card p { color: var(--text-light); font-size: 0.95rem; }
+        
+        .appearance { display: flex; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--border); }
+        .appearance:last-child { border-bottom: none; }
+        .appearance-type { min-width: 100px; font-size: 0.8rem; font-weight: 600; color: var(--accent); text-transform: uppercase; }
+        .appearance-content h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 6px; font-family: 'Inter', sans-serif; }
+        .appearance-content p { color: var(--text-light); font-size: 0.9rem; }
+        
+        .cta-box { background: var(--primary); color: white; padding: 50px; border-radius: 12px; text-align: center; margin-top: 60px; }
+        .cta-box h2 { color: white; margin-bottom: 16px; }
+        .cta-box p { opacity: 0.9; margin-bottom: 24px; }
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #d63850; opacity: 1; }
+        
+        footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+        footer p { opacity: 0.7; }
+        
+        @media (max-width: 768px) {
+            .speaking-topics { grid-template-columns: 1fr; }
+            .appearance { flex-direction: column; gap: 8px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container" style="max-width: 1200px;">
+            <a href="index.html" class="logo">Chris O'Hara</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Speaking & Media</h1>
+            <p>Keynotes, panels, podcasts, and thought leadership</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Speaking Topics</h2>
+            <div class="speaking-topics">
+                <div class="topic-card">
+                    <h3>The Future of Customer Data</h3>
+                    <p>How first-party data strategies, CDPs, and AI are reshaping personalization in a privacy-first world.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Data-Driven Marketing at Scale</h3>
+                    <p>Building enterprise data strategies that connect marketing, sales, and customer experience.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>From DMP to CDP: The Evolution</h3>
+                    <p>Lessons from the front lines of marketing technology transformation.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>AI in Product Marketing</h3>
+                    <p>Practical applications of AI tools to enhance productivity and go-to-market strategy.</p>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Select Appearances</h2>
+            
+            <div class="appearance">
+                <div class="appearance-type">Keynote</div>
+                <div class="appearance-content">
+                    <h3>SAP Customer Experience Live</h3>
+                    <p>Growing Your Business Through Enterprise-Wide Customer Centricity — London</p>
+                </div>
+            </div>
+            
+            <div class="appearance">
+                <div class="appearance-type">Conference</div>
+                <div class="appearance-content">
+                    <h3>Salesforce Connections</h3>
+                    <p>Multiple sessions on data strategy, CDP implementation, and marketing cloud</p>
+                </div>
+            </div>
+            
+            <div class="appearance">
+                <div class="appearance-type">Panel</div>
+                <div class="appearance-content">
+                    <h3>AdExchanger Programmatic I/O</h3>
+                    <p>The future of identity and data management in programmatic advertising</p>
+                </div>
+            </div>
+            
+            <div class="appearance">
+                <div class="appearance-type">Podcast</div>
+                <div class="appearance-content">
+                    <h3>Various Industry Podcasts</h3>
+                    <p>Regular guest on marketing technology and data strategy podcasts</p>
+                </div>
+            </div>
+            
+            <div class="appearance">
+                <div class="appearance-type">Author</div>
+                <div class="appearance-content">
+                    <h3>eConsultancy Whitepapers</h3>
+                    <p>Best Practices in Display Advertising, Data Management, Programmatic Marketing, Mobile Display, and Programmatic Branding</p>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <h2>Interested in Having Me Speak?</h2>
+                <p>I'm available for keynotes, panels, podcasts, and workshops on data strategy, CDPs, and the future of marketing technology.</p>
+                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chris O'Hara. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

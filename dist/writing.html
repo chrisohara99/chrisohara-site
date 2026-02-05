@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing | Chris O'Hara</title>
+    <meta name="description" content="Articles and thought leadership by Chris O'Hara on marketing technology, customer data, and enterprise strategy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --text: #333;
+            --text-light: #666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.8; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 16px 0; }
+        nav .container { max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .page-header { padding: 140px 0 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; }
+        .page-header h1 { font-size: 3rem; color: white; margin-bottom: 16px; }
+        .page-header p { opacity: 0.9; font-size: 1.2rem; }
+        
+        section { padding: 60px 0; }
+        
+        .post { padding: 40px 0; border-bottom: 1px solid var(--border); }
+        .post:first-child { padding-top: 0; }
+        .post:last-child { border-bottom: none; }
+        .post-meta { font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px; }
+        .post-meta span { margin-right: 16px; }
+        .post h2 { font-size: 1.6rem; color: var(--primary); margin-bottom: 16px; }
+        .post h2 a { color: var(--primary); }
+        .post h2 a:hover { color: var(--accent); }
+        .post p { color: var(--text); margin-bottom: 16px; }
+        .post .read-more { font-weight: 600; color: var(--accent); }
+        .post .source { font-size: 0.85rem; color: var(--text-light); font-style: italic; }
+        
+        footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+        footer p { opacity: 0.7; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container" style="max-width: 1200px;">
+            <a href="index.html" class="logo">Chris O'Hara</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Writing</h1>
+            <p>Thoughts on data, marketing technology, and the future of customer experience</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            
+            <article class="post">
+                <div class="post-meta">
+                    <span>April 2022</span>
+                    <span>Customer Data</span>
+                </div>
+                <h2>Moving from Next-Best-Action to Next-Best-Dollar</h2>
+                <p>As Heraclitus reminds us, "No man ever steps in the same river twice, for it's not the same river and he's not the same man." This is arguably even more true given the rapid changes we've seen in business lately. The global pandemic humbled retailers slow to adopt digital, as digital-only interactions grew to 72% in a short period.</p>
+                <p>Amid rapid change, marketing always seems to lead the way. When the CEO picks up the bat phone, he's calling the CMO first. What does the agile marketing organization require? It starts with data, intelligence, and automation...</p>
+                <a href="https://www.the-future-of-commerce.com/2022/04/12/business-agility-customer-data/" class="read-more" target="_blank">Read Full Article →</a>
+                <p class="source">Originally published in The Future of Customer Engagement</p>
+            </article>
+            
+            <article class="post">
+                <div class="post-meta">
+                    <span>March 2022</span>
+                    <span>CDP Strategy</span>
+                </div>
+                <h2>Data Gravity: Why Better Data Beats More Data</h2>
+                <p>Ben Bloom's recent post on the Gartner Blog shined a light on a topic we rarely hear about in the CDP world — the cost and effort associated with building a first-party data asset, and the possibly diminishing returns of building a complex "Customer 360" view.</p>
+                <p>In the CDP boom we're living in, many brands are caught up in the notion that more data is better, and not considering that better data (and less of it) may be more impactful. The concept of "data gravity" — when the more data you have, the more you attract — offers a useful lens...</p>
+                <a href="https://chrisohara.wordpress.com" class="read-more" target="_blank">Read Full Article →</a>
+            </article>
+            
+            <article class="post">
+                <div class="post-meta">
+                    <span>2022</span>
+                    <span>Enterprise CX</span>
+                </div>
+                <h2>Grow Your Business Through Enterprise-Wide Customer Centricity</h2>
+                <p>How to put customers at the heart of your intelligent enterprise and facilitate experiences that drive lifetime value. An enterprise-wide customer data foundation bridges organizational silos, enables real-time customer insights where decisions are made, and fuels personalized experiences that show you truly know your customer.</p>
+                <a href="https://www.sap.com/about/events/customer-experience-live.html" class="read-more" target="_blank">Watch Session →</a>
+                <p class="source">SAP Customer Experience Live, London</p>
+            </article>
+            
+            <article class="post">
+                <div class="post-meta">
+                    <span>Ongoing</span>
+                    <span>Industry Research</span>
+                </div>
+                <h2>eConsultancy Whitepapers</h2>
+                <p>Over the years, I've authored multiple whitepapers for eConsultancy focusing on programmatic advertising and data management:</p>
+                <ul style="margin: 16px 0 16px 20px; color: var(--text);">
+                    <li>Best Practices in Display Advertising</li>
+                    <li>Best Practices in Data Management</li>
+                    <li>Programmatic Marketing: Beyond RTB</li>
+                    <li>The New Mobile Display Ecosystem</li>
+                    <li>Programmatic Branding</li>
+                </ul>
+            </article>
+            
+            <article class="post">
+                <div class="post-meta">
+                    <span>Archive</span>
+                </div>
+                <h2>The Devil's Work (Blog Archive)</h2>
+                <p>My original blog "The Devil's Work" contains years of writing on marketing technology, customer data, and industry trends. The archive remains available on WordPress.</p>
+                <a href="https://chrisohara.wordpress.com" class="read-more" target="_blank">Visit Archive →</a>
+            </article>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chris O'Hara. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
