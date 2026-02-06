@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speaking | Chris O'Hara</title>
-    <meta name="description" content="Chris O'Hara - Speaking engagements, podcasts, and media appearances.">
+    <meta name="description" content="Chris O'Hara - Speaking engagements, podcasts, videos, and webinars on CDPs, data management, and marketing technology.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,15 +37,30 @@
         .page-header h1 { font-size: 3rem; color: white; margin-bottom: 16px; }
         .page-header p { opacity: 0.9; font-size: 1.2rem; }
         
-        section { padding: 80px 0; }
+        section { padding: 60px 0; }
         section.alt { background: var(--bg-alt); }
         
-        .section-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 30px; }
+        .section-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 30px; padding-bottom: 15px; border-bottom: 3px solid var(--accent); display: inline-block; }
+        
+        .section-intro { color: var(--text-light); margin-bottom: 30px; font-size: 1.05rem; }
         
         .speaking-topics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 60px; }
         .topic-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); }
         .topic-card h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 12px; }
         .topic-card p { color: var(--text-light); font-size: 0.95rem; }
+        
+        .media-item { background: white; padding: 28px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); margin-bottom: 20px; transition: transform 0.2s, box-shadow 0.2s; }
+        .media-item:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .media-item .type-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; color: white; background: var(--accent); padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .media-item .type-badge.video { background: #e74c3c; }
+        .media-item .type-badge.podcast { background: #9b59b6; }
+        .media-item .type-badge.webinar { background: #3498db; }
+        .media-item .type-badge.conference { background: #27ae60; }
+        .media-item h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .media-item .date { font-size: 0.85rem; color: var(--text-light); margin-bottom: 10px; }
+        .media-item p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 14px; }
+        .media-item .link { font-weight: 600; font-size: 0.9rem; }
+        .media-item .link::after { content: ' →'; }
         
         .appearance { display: flex; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--border); }
         .appearance:last-child { border-bottom: none; }
@@ -67,6 +82,7 @@
             .speaking-topics { grid-template-columns: 1fr; }
             .appearance { flex-direction: column; gap: 8px; }
             .nav-links { display: none; }
+            .page-header h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -88,7 +104,7 @@
     <div class="page-header">
         <div class="container">
             <h1>Speaking & Media</h1>
-            <p>Keynotes, panels, podcasts, and thought leadership</p>
+            <p>Keynotes, panels, podcasts, webinars, and thought leadership</p>
         </div>
     </div>
 
@@ -113,14 +129,150 @@
                     <p>Practical applications of AI tools to enhance productivity and go-to-market strategy.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="alt">
+        <div class="container">
+            <h2 class="section-title">Videos</h2>
+            <p class="section-intro">Conference keynotes, panel discussions, and video interviews on marketing technology, data management, and customer experience.</p>
             
-            <h2 class="section-title">Select Appearances</h2>
+            <div class="media-item">
+                <span class="type-badge video">Video</span>
+                <h3>SAP Customer Experience Live - London</h3>
+                <p><strong>"Grow Your Business Through Enterprise-Wide Customer Centricity"</strong> — Learn how to put customers at the heart of your intelligent enterprise and facilitate experiences that drive lifetime value. Covers enterprise-wide customer data foundation, bridging organizational silos, and enabling real-time customer insights.</p>
+                <a href="https://www.sap.com/about/events/customer-experience-live.html?video=124dfc55-527e-0010-bca6-c68f7e60039b#london" class="link" target="_blank">Watch on SAP</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge video">Video</span>
+                <h3>AdExchanger Interview: Salesforce Krux Acquisition</h3>
+                <p>Discussion with Ryan Joe about Salesforce's acquisition of Krux and how Salesforce is thinking about artificial intelligence, the role of data management, and applications for better marketing.</p>
+                <a href="https://www.youtube.com/watch?v=4-oit3P-RzA" class="link" target="_blank">Watch on YouTube</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge video">Video</span>
+                <h3>Programmatic I/O: Future of Digital Marketing Hubs</h3>
+                <p>Panel discussion exploring the future of digital marketing hubs at NYC's Programmatic I/O event, featuring speakers from Krux, Oracle, and Rocket Fuel.</p>
+                <a href="https://www.youtube.com/watch?v=7QtIuoLZDTs&list=PLsKGdW2iTbg_a6qq7E_1mAj4zBg53jtlA" class="link" target="_blank">Watch on YouTube</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge video">Video</span>
+                <h3>Beet.TV DMEXCO 2018 Interview</h3>
+                <div class="date">September 2018 | Cologne, Germany</div>
+                <p>Interview about Salesforce's "fourth industrial revolution" driven by data, AI, and IoT. Discusses ExactTarget Marketing Cloud integration, Krux/Salesforce DMP, Einstein Segmentation, MuleSoft, and Datorama acquisitions.</p>
+                <a href="https://www.beet.tv/2018/09/chris-ohara.html" class="link" target="_blank">Watch on Beet.TV</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge video">Video</span>
+                <h3>ICOM Global Summit 2016</h3>
+                <div class="date">2016 | Seville, Spain</div>
+                <p>Panel discussion on programmatic video at the ICOM Global Summit in Seville.</p>
+                <a href="https://www.youtube.com/watch?v=QJN7zTTraSY" class="link" target="_blank">Watch on YouTube</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge video">Video</span>
+                <h3>Programmatic I/O: Mobile Location & Beacon Data</h3>
+                <p>Exploring the possibilities of using mobile location and beacon data to better segment, target, and analyze consumers. Featuring FreckleIOT, Ticketmaster/Live Nation, and PlaceIQ.</p>
+                <a href="https://vimeo.com/177274353" class="link" target="_blank">Watch on Vimeo</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge video">Video</span>
+                <h3>LiveRamp: Understanding User Match Rates in AdTech</h3>
+                <p>Co-presented with Katie Coghlan of LiveRamp. A comprehensive primer on user match rates—covering both the basics and subtleties of identity on the Internet.</p>
+                <a href="https://vimeo.com/170869134" class="link" target="_blank">Watch on Vimeo</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Podcasts</h2>
+            <p class="section-intro">In-depth conversations about data management, CDPs, marketing technology, and industry insights.</p>
+            
+            <div class="media-item">
+                <span class="type-badge podcast">Podcast</span>
+                <h3>Paleo Ad Tech: "Getting to the Krux of DMPs and Ad Data"</h3>
+                <div class="date">July 2021 | Episode #10</div>
+                <p>Hosts Martin Kihn and Jill Gray follow Chris through his colorful career spanning Traffiq, Bionic Ads, Nielsen, nPario, and Krux (acquired by Salesforce in 2016). Discusses the dot-com boom, perfecting writing and pitching voice, the third-party cookie breakup, and earning ad tech pedigree.</p>
+                <a href="https://paleoadtech.com/2023/12/10/10-chris-ohara-getting-to-the-krux-of-ad-sales-and-dmps/" class="link" target="_blank">Listen Now</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge podcast">Podcast</span>
+                <h3>Salesforce Marketing Cloud Podcast: CDPs Discussion</h3>
+                <div class="date">2021</div>
+                <p>Joining hosts Martin Kihn and Tina Rozul to discuss all things CDP (Customer Data Platform) on the popular Marketing Cloud podcast.</p>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge podcast">Podcast</span>
+                <h3>Datavana Podcast: CDPs and the Customer Data Platforms Book</h3>
+                <div class="date">2021</div>
+                <p>The authors of "Customer Data Platforms" join Russ Artzt (Executive Chairman of RingLead, Co-founder of Computer Associates) to discuss CDPs and the new book. Hosted by Jaime Muirhead.</p>
+                <a href="https://www.ringlead.com/talkdatatome/datavana/chris-o-hara/" class="link" target="_blank">Listen Now</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge podcast">Podcast</span>
+                <h3>DisrupTV: CDPs with Martin Kihn</h3>
+                <p>Great conversation about Customer Data Platforms with co-author Martin Kihn, hosted by Vala Afshar and Ray Wang. Segment starts at 22:33.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt">
+        <div class="container">
+            <h2 class="section-title">Webinars</h2>
+            <p class="section-intro">Educational webinars and virtual events on data strategy, CDP implementation, and the future of marketing technology.</p>
+            
+            <div class="media-item">
+                <span class="type-badge webinar">Webinar</span>
+                <h3>Salesforce: CDPs and Personalization</h3>
+                <div class="date">2021</div>
+                <p>Featuring co-author Martin Kihn and Art Sebastian (Head of Digital, Casey's) discussing CDPs and their impact on personalization.</p>
+                <a href="https://www.salesforce.com/form/events/webinars/form-rss/3088561" class="link" target="_blank">Watch Webinar</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge webinar">Webinar</span>
+                <h3>RingLead "Talk Data to Me" Event</h3>
+                <div class="date">2021</div>
+                <p>Conversation about CDPs, DMPs, data quality, orchestration, and the future of data with Russ Artzt (Executive Chairman of RingLead, Co-founder of Computer Associates).</p>
+                <a href="https://www.ringlead.com/events/talkdatatome-ondemand/#agenda" class="link" target="_blank">Watch On-Demand</a>
+            </div>
+
+            <div class="media-item">
+                <span class="type-badge webinar">Webinar</span>
+                <h3>Econsultancy: The Role of the Agency in Data Management</h3>
+                <p>Discussion on how agencies are coping with the new data-driven landscape as marketers increasingly take ownership of their own data. Featuring speakers from L'Oreal, Mediavest|Spark, and Krux.</p>
+                <a href="http://www.krux.com/feature/webinar-the-role-of-the-agency-in-data-management" class="link" target="_blank">Watch Webinar</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Conference Appearances</h2>
             
             <div class="appearance">
                 <div class="appearance-type">Keynote</div>
                 <div class="appearance-content">
                     <h3>SAP Customer Experience Live</h3>
                     <p>Growing Your Business Through Enterprise-Wide Customer Centricity — London</p>
+                </div>
+            </div>
+
+            <div class="appearance">
+                <div class="appearance-type">Demo/Talk</div>
+                <div class="appearance-content">
+                    <h3>Salesforce World Tour - New York</h3>
+                    <p>Presentation on Krux integration with Salesforce Marketing Cloud, Einstein AI and data management capabilities (December 2016)</p>
                 </div>
             </div>
             
@@ -131,34 +283,58 @@
                     <p>Multiple sessions on data strategy, CDP implementation, and marketing cloud</p>
                 </div>
             </div>
+
+            <div class="appearance">
+                <div class="appearance-type">Conference</div>
+                <div class="appearance-content">
+                    <h3>DMEXCO 2018</h3>
+                    <p>Interview and panels on Salesforce acquisitions and AI strategy — Cologne, Germany</p>
+                </div>
+            </div>
             
             <div class="appearance">
                 <div class="appearance-type">Panel</div>
                 <div class="appearance-content">
                     <h3>AdExchanger Programmatic I/O</h3>
-                    <p>The future of identity and data management in programmatic advertising</p>
+                    <p>Multiple panels on identity, data management, and programmatic advertising — NYC</p>
                 </div>
             </div>
-            
+
             <div class="appearance">
-                <div class="appearance-type">Podcast</div>
+                <div class="appearance-type">Panel</div>
                 <div class="appearance-content">
-                    <h3>Various Industry Podcasts</h3>
-                    <p>Regular guest on marketing technology and data strategy podcasts</p>
+                    <h3>ICOM Global Summit 2016</h3>
+                    <p>Programmatic video panel discussion — Seville, Spain</p>
+                </div>
+            </div>
+
+            <div class="appearance">
+                <div class="appearance-type">Presentation</div>
+                <div class="appearance-content">
+                    <h3>Canadian Marketing Association</h3>
+                    <p>Deep dive into data management topics</p>
+                </div>
+            </div>
+
+            <div class="appearance">
+                <div class="appearance-type">Event</div>
+                <div class="appearance-content">
+                    <h3>Industry Preview NYC</h3>
+                    <p>Marketing clouds and the future of martech stacks</p>
                 </div>
             </div>
             
             <div class="appearance">
                 <div class="appearance-type">Author</div>
                 <div class="appearance-content">
-                    <h3>eConsultancy Whitepapers</h3>
-                    <p>Best Practices in Display Advertising, Data Management, Programmatic Marketing, Mobile Display, and Programmatic Branding</p>
+                    <h3>Econsultancy Whitepapers & Best Practice Guides</h3>
+                    <p>Best Practices in Display Advertising, Data Management, Programmatic Marketing, Mobile Display, Programmatic Branding, and The Role of the Agency in Data Management</p>
                 </div>
             </div>
             
             <div class="cta-box">
                 <h2>Interested in Having Me Speak?</h2>
-                <p>I'm available for keynotes, panels, podcasts, and workshops on data strategy, CDPs, and the future of marketing technology.</p>
+                <p>I'm available for keynotes, panels, podcasts, and workshops on data strategy, CDPs, AI in marketing, and the future of marketing technology.</p>
                 <a href="contact.html" class="btn btn-primary">Get in Touch</a>
             </div>
         </div>
