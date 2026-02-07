@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         @page {
-            margin: 0.5in 0.6in;
+            margin: 0.4in 0.5in;
             size: letter;
         }
         :root {
@@ -20,33 +20,33 @@
         body { 
             font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif; 
             color: var(--text); 
-            line-height: 1.6; 
-            font-size: 11.5pt;
+            line-height: 1.5; 
+            font-size: 10.5pt;
         }
         
         /* Header */
         .header {
             text-align: center;
-            padding-bottom: 20px;
-            margin-bottom: 24px;
+            padding-bottom: 14px;
+            margin-bottom: 16px;
             border-bottom: 3px solid var(--accent);
         }
         .header h1 {
-            font-size: 36pt;
+            font-size: 32pt;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             letter-spacing: -0.5px;
         }
         .header .tagline {
-            font-size: 13pt;
-            color: var(--text-light);
-            font-weight: 400;
-            margin-bottom: 10px;
+            font-size: 12pt;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
         }
         .header .contact {
-            font-size: 11pt;
-            color: var(--text);
+            font-size: 10pt;
+            color: var(--text-light);
         }
         .header .contact a { 
             color: var(--accent); 
@@ -56,16 +56,16 @@
         
         /* Sections */
         .section {
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
         .section-header {
             display: flex;
             align-items: center;
-            margin-bottom: 16px;
-            gap: 12px;
+            margin-bottom: 12px;
+            gap: 10px;
         }
         .section-header h2 {
-            font-size: 14pt;
+            font-size: 12pt;
             font-weight: 700;
             color: var(--primary);
             text-transform: uppercase;
@@ -81,110 +81,151 @@
         
         /* Jobs */
         .job {
-            margin-bottom: 20px;
+            margin-bottom: 14px;
             page-break-inside: avoid;
         }
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
         .job-title {
-            font-size: 13pt;
+            font-size: 11.5pt;
             font-weight: 700;
             color: var(--primary);
         }
         .job-date {
             color: var(--text-light);
-            font-size: 11pt;
+            font-size: 10pt;
             font-weight: 400;
         }
         .job-company {
             color: var(--accent);
             font-weight: 600;
-            font-size: 12pt;
-            margin-bottom: 8px;
+            font-size: 10.5pt;
+            margin-bottom: 6px;
         }
         .job ul {
-            padding-left: 20px;
+            padding-left: 18px;
             margin: 0;
         }
         .job li {
-            margin-bottom: 5px;
-            font-size: 11pt;
-            line-height: 1.5;
-        }
-        
-        /* Two Column Layout */
-        .two-col {
-            display: flex;
-            gap: 40px;
-        }
-        .two-col > div {
-            flex: 1;
-        }
-        
-        /* Publications */
-        .pub-section h3 {
-            font-size: 12pt;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 10px;
-            padding-bottom: 4px;
-            border-bottom: 1px solid var(--border);
-        }
-        .pub-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .pub-section li {
-            font-size: 11pt;
-            padding: 6px 0;
+            margin-bottom: 3px;
+            font-size: 10pt;
             line-height: 1.4;
         }
-        .pub-section li strong {
-            color: var(--primary);
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .skills-grid td {
+            width: 50%;
+            vertical-align: top;
+            padding: 0 15px 0 0;
+        }
+        .skills-grid ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skills-grid li {
+            font-size: 10pt;
+            padding: 3px 0;
+            padding-left: 12px;
+            position: relative;
+        }
+        .skills-grid li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
         }
         
-        /* Advisory */
-        .advisory-list {
+        /* Publications Table */
+        .pub-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .pub-table td {
+            vertical-align: top;
+            padding: 0 12px 8px 0;
+            font-size: 10pt;
+        }
+        .pub-table h3 {
+            font-size: 10.5pt;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .pub-table p {
+            margin: 0 0 4px 0;
+            line-height: 1.4;
+        }
+        .pub-table .book-title {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .pub-table .book-details {
+            color: var(--text-light);
+            font-size: 9.5pt;
+        }
+        
+        /* Advisory & Education */
+        .two-col-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .two-col-table td {
+            width: 50%;
+            vertical-align: top;
+            padding-right: 20px;
+        }
+        .two-col-table h3 {
+            font-size: 10.5pt;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .two-col-table ul {
             list-style: none;
             padding: 0;
         }
-        .advisory-list li {
-            font-size: 11pt;
-            padding: 6px 0;
-            border-bottom: 1px solid #f0f0f0;
+        .two-col-table li {
+            font-size: 10pt;
+            padding: 3px 0;
         }
-        .advisory-list li:last-child {
-            border-bottom: none;
+        .edu-item h4 {
+            font-size: 10.5pt;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .edu-item p {
+            color: var(--text-light);
+            font-size: 9.5pt;
+            margin: 0;
         }
         
-        /* Education */
-        .education-grid {
-            display: flex;
-            gap: 40px;
-        }
-        .education-item h3 {
-            font-size: 12pt;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .education-item p {
-            color: var(--text-light);
-            font-size: 11pt;
+        /* Speaking section */
+        .speaking-text {
+            font-size: 10pt;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Chris O'Hara</h1>
-        <div class="tagline">20+ years driving growth at the intersection of data, marketing, and technology</div>
+        <div class="tagline">Data & AI Marketing Executive · Published Author · Enterprise PMM Leader</div>
         <div class="contact">
             <a href="https://chrisohara.com">chrisohara.com</a> · 
-            <a href="https://linkedin.com/in/chrisohara1">LinkedIn</a> · 
+            <a href="https://linkedin.com/in/christopherohara">linkedin.com/in/christopherohara</a> · 
             New York Metro Area
         </div>
     </div>
@@ -201,9 +242,9 @@
             </div>
             <div class="job-company">SAP</div>
             <ul>
-                <li><strong>AI Practice Lead (2026):</strong> Leading AI transformation within Data and Analytics Marketing; deploying tools, processes, and best practices for the agentic future</li>
+                <li><strong>AI Practice Lead (2026):</strong> Leading our AI transformation within Data & Analytics Marketing; deploying tools, processes, and best practices for the agentic future</li>
                 <li><strong>Planning & Analytics (2024–2025):</strong> Led team of 9 owning strategy, GTM, pricing, and commercialization for xP&A and Intelligent Applications; enabled transition to consumption-based, AI-driven go-to-market</li>
-                <li><strong>Data & Identity (2022–2023):</strong> Led marketing for Business Technology Platform including CIAM, ECPM (Gigya), and SAP Customer Data Platform</li>
+                <li><strong>Data & Identity (2022–2023):</strong> Led marketing for SAP CX division's data portfolio including CIAM, ECPM (Gigya), and SAP Customer Data Platform</li>
             </ul>
         </div>
         
@@ -227,11 +268,12 @@
                 <div class="job-title">Head of Data Strategy & Product Marketing</div>
                 <div class="job-date">Dec 2014 – Oct 2016</div>
             </div>
-            <div class="job-company">Krux (acquired by Salesforce)</div>
+            <div class="job-company">Krux (acquired by Salesforce for ~$800M)</div>
             <ul>
                 <li>Multiple senior roles: US Sales Leader, Head of Data Strategy, Product Marketing Lead</li>
-                <li>Closed largest deals including L'Oréal, AB-InBev, Heineken, Coca-Cola, Campbell's Soup, Duracell</li>
-                <li>Positioned company for acquisition by Salesforce</li>
+                <li>Closed largest deals, including L'Oréal, AB-InBev, Heineken, Coca-Cola, Campbell's Soup, Duracell</li>
+                <li>Built thought leadership engine: 5 Econsultancy white papers, monthly AdExchanger column, 100+ published articles</li>
+                <li>Positioned company for acquisition by Salesforce—forming the technical backbone of Salesforce Marketing Cloud</li>
             </ul>
         </div>
         
@@ -242,8 +284,9 @@
             </div>
             <div class="job-company">Bionic Advertising Systems</div>
             <ul>
-                <li>Led revenue generation, business development, marketing for programmatic direct SaaS platform</li>
-                <li>Initiated 50+ agency deals in 14 months</li>
+                <li>Co-founded and scaled SaaS workflow automation platform for programmatic direct media planning & buying</li>
+                <li>Led revenue generation, business development, and marketing; initiating 50+ agency deals in 14 months</li>
+                <li>IAB Networks & Exchanges and Sales Executive Committee member; championed programmatic direct standards</li>
             </ul>
         </div>
         
@@ -252,9 +295,9 @@
                 <div class="job-title">Chief Revenue Officer</div>
                 <div class="job-date">2012 – 2013</div>
             </div>
-            <div class="job-company">Looksmart (LOOK)</div>
+            <div class="job-company">LookSmart (LOOK)</div>
             <ul>
-                <li>Led revenue, client services, trading desk operations for public search marketing network</li>
+                <li>Led revenue, client services, and trading desk operations for public search marketing network</li>
                 <li>Managed platform aggregating 5 billion search queries per day</li>
             </ul>
         </div>
@@ -276,61 +319,80 @@
         <div class="section-header">
             <h2>Publications</h2>
         </div>
-        <table style="width: 100%; border-collapse: collapse;">
+        <table class="pub-table">
             <tr>
-                <td style="width: 50%; vertical-align: top; padding-right: 30px;">
-                    <div class="pub-section">
-                        <h3>Business Books</h3>
-                        <ul>
-                            <li><strong>Customer Data Platforms</strong><br>Wiley, 2020 · #1 Amazon Business Marketing</li>
-                            <li><strong>Data-Driven</strong><br>McGraw Hill, 2018 · Axiom Silver Medal</li>
-                        </ul>
-                    </div>
+                <td style="width: 35%;">
+                    <h3>Business Books</h3>
+                    <p><span class="book-title">Customer Data Platforms</span><br>
+                    <span class="book-details">Wiley, 2020 · #1 Amazon Business Marketing</span></p>
+                    <p><span class="book-title">Data-Driven</span><br>
+                    <span class="book-details">McGraw Hill, 2018 · Axiom Silver Medal</span></p>
+                    
+                    <h3 style="margin-top: 10px;">Industry Writing</h3>
+                    <p style="font-size: 9.5pt;">100+ published articles in AdExchanger, Econsultancy, Business Insider, SAP Future of Commerce. 5 feature-length white papers including Best Practices in Data Management.</p>
+                    
+                    <h3 style="margin-top: 10px;">Current Project</h3>
+                    <p style="font-size: 9.5pt;"><strong>The Future of PMM</strong> (futureofpmm.com)<br>Newsletter analyzing AI's transformation of product marketing</p>
                 </td>
-                <td style="width: 50%; vertical-align: top;">
-                    <div class="pub-section">
-                        <h3>Food & Drink (Random House)</h3>
-                        <ul>
-                            <li>The Bloody Mary · Ribs: A Connoisseur's Guide</li>
-                            <li>The Ultimate Chili Book · Hot Toddies</li>
-                            <li>Wing It · Great American Beer</li>
-                        </ul>
-                    </div>
+                <td style="width: 30%;">
+                    <h3>Consumer Books</h3>
+                    <p style="font-size: 9.5pt;">The Bloody Mary · Ribs: A Connoisseur's Guide<br>
+                    The Ultimate Chili Book · Hot Toddies<br>
+                    Wing It · Great American Beer</p>
+                    <p style="font-size: 9.5pt; margin-top: 8px;"><em>Featured on NBC Today Show, CBS Early Morning Show, Food Network, Forbes, Esquire</em></p>
                 </td>
-            </tr>
-        </table>
-    </div>
-    
-    <div class="section">
-        <div class="section-header">
-            <h2>Advisory Roles</h2>
-        </div>
-        <ul class="advisory-list">
-            <li><strong>ELSY</strong> – Advisory Board Member (sold to VideoAmp)</li>
-            <li><strong>Advertiser Perceptions</strong> – Customer Advisory Board</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <div class="section-header">
-            <h2>Education</h2>
-        </div>
-        <table style="width: 100%; border-collapse: collapse;">
-            <tr>
-                <td style="width: 50%; vertical-align: top; padding-right: 20px;">
-                    <div class="education-item">
-                        <h3>Connecticut College</h3>
+                <td style="width: 35%;">
+                    <h3>Advisory Roles</h3>
+                    <p style="font-size: 9.5pt;"><strong>ELSY</strong> – Advisory Board Member (sold to VideoAmp)</p>
+                    <p style="font-size: 9.5pt;"><strong>Advertiser Perceptions</strong> – Customer Advisory Board</p>
+                    
+                    <h3 style="margin-top: 12px;">Education</h3>
+                    <div class="edu-item">
+                        <h4>Connecticut College</h4>
                         <p>BA, English · 1990</p>
                     </div>
-                </td>
-                <td style="width: 50%; vertical-align: top;">
-                    <div class="education-item">
-                        <h3>Loyola High School</h3>
+                    <div class="edu-item" style="margin-top: 6px;">
+                        <h4>Loyola High School</h4>
                         <p>New York, NY · 1986</p>
                     </div>
                 </td>
             </tr>
         </table>
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            <h2>AI & Transformation Expertise</h2>
+        </div>
+        <table class="skills-grid">
+            <tr>
+                <td>
+                    <ul>
+                        <li>Enterprise AI Commercialization</li>
+                        <li>Generative AI & Agentic AI Adoption</li>
+                        <li>SaaS-to-Consumption Transformation</li>
+                        <li>Data Fabric & Identity</li>
+                        <li>ERP and CRM Full Stack Expertise</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Product Marketing & GTM Strategy</li>
+                        <li>Pricing, Packaging & Commercialization</li>
+                        <li>Analyst Relations (Gartner, Forrester)</li>
+                        <li>Competitive Intelligence & Sales Enablement</li>
+                        <li>Use Case Development</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            <h2>Speaking & Media</h2>
+        </div>
+        <p class="speaking-text">Keynote and featured speaker at SAP Sapphire, Salesforce Dreamforce, and leading industry conferences on customer data strategy, AI in marketing, and digital transformation. See all media at <a href="https://chrisohara.com" style="color: #e74c3c;">chrisohara.com</a></p>
     </div>
 </body>
 </html>
