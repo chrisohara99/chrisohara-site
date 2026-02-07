@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chris O'Hara - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            margin: 0.6in 0.7in;
+            size: letter;
+        }
+        :root {
+            --primary: #1a1a2e;
+            --accent: #e94560;
+            --text: #333;
+            --text-light: #666;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            color: var(--text); 
+            line-height: 1.5; 
+            font-size: 10pt;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent); text-decoration: none; }
+        
+        .header {
+            text-align: center;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 28pt;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .header .tagline {
+            font-size: 11pt;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+        .header .contact {
+            font-size: 9pt;
+            color: var(--text);
+        }
+        .header .contact a { color: var(--accent); }
+        
+        .section {
+            margin-bottom: 18px;
+            page-break-inside: avoid;
+        }
+        .section h2 {
+            font-size: 13pt;
+            color: var(--primary);
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .job {
+            margin-bottom: 14px;
+            page-break-inside: avoid;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        .job-title {
+            font-size: 10.5pt;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .job-date {
+            color: var(--text-light);
+            font-size: 9pt;
+        }
+        .job-company {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 10pt;
+            margin-bottom: 6px;
+        }
+        .job ul {
+            padding-left: 18px;
+            margin: 0;
+        }
+        .job li {
+            margin-bottom: 3px;
+            font-size: 9.5pt;
+        }
+        
+        .two-col {
+            display: flex;
+            gap: 30px;
+        }
+        .two-col > div {
+            flex: 1;
+        }
+        
+        .pub-category h3 {
+            font-size: 10pt;
+            color: var(--primary);
+            margin-bottom: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        .pub-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pub-category li {
+            font-size: 9.5pt;
+            padding: 3px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .advisory ul {
+            padding-left: 18px;
+        }
+        .advisory li {
+            font-size: 9.5pt;
+            margin-bottom: 4px;
+        }
+        
+        .education-item {
+            margin-bottom: 8px;
+        }
+        .education-item h3 {
+            font-size: 10pt;
+            color: var(--primary);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .education-item p {
+            color: var(--text-light);
+            font-size: 9.5pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Chris O'Hara</h1>
+        <div class="tagline">20+ years driving growth at the intersection of data, marketing, and technology</div>
+        <div class="contact">
+            <a href="https://chrisohara.com">chrisohara.com</a> · 
+            <a href="https://linkedin.com/in/chrisohara1">linkedin.com/in/chrisohara1</a> · 
+            New York Metro Area
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Work Experience</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">VP Marketing</div>
+                <div class="job-date">Jan 2026 – Present</div>
+            </div>
+            <div class="job-company">SAP · Business Data Cloud</div>
+            <ul>
+                <li>Leading the AI practice within the Data and Analytics Marketing team</li>
+                <li>Evaluating and deploying tools, best practices, and processes to transform product marketing for the agentic future</li>
+                <li>Launched "Future of PMM" website showcasing AI-driven product marketing best practices</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">VP, Marketing / Head of Planning, Analytics & Intelligent Applications</div>
+                <div class="job-date">Jan 2024 – Dec 2025</div>
+            </div>
+            <div class="job-company">SAP · Business Data Cloud</div>
+            <ul>
+                <li>Led team of 9, owning strategy, marketing, GTM, pricing, packaging and commercialization for xP&A and Intelligent Applications</li>
+                <li>Researched and deployed AI tools (Claude, Perplexity, LLM platforms) across product marketing team to enhance productivity</li>
+                <li>Enabled transition from traditional SaaS models to consumption-based, AI-driven go-to-market strategies</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">VP, Marketing / Head of Data and Identity</div>
+                <div class="job-date">Feb 2022 – Dec 2023</div>
+            </div>
+            <div class="job-company">SAP · Customer Experience Division</div>
+            <ul>
+                <li>Led Data & Identity marketing and solutions for Business Technology Platform</li>
+                <li>Managed portfolio including CIAM, ECPM (Gigya), and SAP Customer Data Platform</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Vice President, Global Product Marketing</div>
+                <div class="job-date">Oct 2016 – Feb 2022</div>
+            </div>
+            <div class="job-company">Salesforce</div>
+            <ul>
+                <li>Led Data & Identity portfolio: Audience Studio (DMP), Customer 360 Audiences (CDP), Advertising Studio, Social Studio, Data Studio, Interaction Studio</li>
+                <li>Executive leader of new "Data Cloud" initiative, an enterprise-scale data platform</li>
+                <li>Rebranded Krux to Salesforce DMP (Audience Studio), launched Data Studio and Customer 360 Audiences</li>
+                <li>Winner of Astro TMP Award 2019 for product marketing innovation</li>
+                <li>Covered 600+ client-facing meetings, touching $2.3B in ACV pipeline</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Head of Data Strategy & Product Marketing</div>
+                <div class="job-date">Dec 2014 – Oct 2016</div>
+            </div>
+            <div class="job-company">Krux (acquired by Salesforce)</div>
+            <ul>
+                <li>Multiple senior roles: US Sales Leader, Head of Data Strategy, Product Marketing Lead</li>
+                <li>Closed largest deals including L'Oréal, AB-InBev, Heineken, Coca-Cola, Campbell's Soup, Duracell</li>
+                <li>Positioned company for acquisition by Salesforce</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">CRO & Co-Founder</div>
+                <div class="job-date">Jan 2013 – Dec 2014</div>
+            </div>
+            <div class="job-company">Bionic Advertising Systems</div>
+            <ul>
+                <li>Led revenue generation, business development, marketing for programmatic direct SaaS platform</li>
+                <li>Initiated 50+ agency deals in 14 months</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Chief Revenue Officer</div>
+                <div class="job-date">2012 – 2013</div>
+            </div>
+            <div class="job-company">Looksmart (LOOK)</div>
+            <ul>
+                <li>Led revenue, client services, trading desk operations for public search marketing network</li>
+                <li>Managed platform aggregating 5 billion search queries per day</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">SVP Sales & Marketing / Acting COO</div>
+                <div class="job-date">2009 – 2012</div>
+            </div>
+            <div class="job-company">TRAFFIQ.com</div>
+            <ul>
+                <li>Led sales, business development, and marketing for digital media platform</li>
+                <li>Won Inc. Top 50 in 2010 for rapid revenue growth</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Publications</h2>
+        <div class="two-col">
+            <div class="pub-category">
+                <h3>Business Books</h3>
+                <ul>
+                    <li><strong>Customer Data Platforms</strong> – Wiley, 2020 (#1 Amazon Business Marketing)</li>
+                    <li><strong>Data-Driven</strong> – McGraw Hill, 2018 (Axiom Silver Medal)</li>
+                </ul>
+            </div>
+            <div class="pub-category">
+                <h3>Food & Drink (Random House)</h3>
+                <ul>
+                    <li>The Bloody Mary · Ribs: A Connoisseur's Guide · The Ultimate Chili Book</li>
+                    <li>Hot Toddies · Wing It · Great American Beer</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section advisory">
+        <h2>Advisory Roles</h2>
+        <ul>
+            <li><strong>ELSY</strong> – Advisory Board Member (sold to VideoAmp)</li>
+            <li><strong>Advertiser Perceptions</strong> – Customer Advisory Board</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>Education</h2>
+        <div class="two-col">
+            <div class="education-item">
+                <h3>Connecticut College</h3>
+                <p>BA, English · 1990</p>
+            </div>
+            <div class="education-item">
+                <h3>Loyola High School</h3>
+                <p>New York, NY · 1986</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
