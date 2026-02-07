@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Customer Data Management | Chris O'Hara</title>
+    <meta name="description" content="Cover story interview with Chris O'Hara on the future of customer data management, CDPs, data fabric, and agentic AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --text: #333;
+            --text-light: #666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.8; background: var(--bg); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.8; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 16px 0; }
+        nav .container { max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .article-header { padding: 140px 0 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; }
+        .article-header h1 { font-size: 2.5rem; color: white; margin-bottom: 16px; line-height: 1.2; }
+        .article-meta { opacity: 0.9; font-size: 1rem; margin-bottom: 24px; }
+        .article-meta span { margin-right: 20px; }
+        
+        .cover-feature { display: flex; gap: 40px; align-items: start; margin: -40px 0 40px; }
+        .cover-image { width: 200px; flex-shrink: 0; }
+        .cover-image img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .cover-info { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); flex-grow: 1; }
+        .cover-info h2 { font-size: 1.3rem; color: var(--primary); margin-bottom: 12px; }
+        .cover-info p { color: var(--text-light); margin-bottom: 16px; }
+        .btn { display: inline-block; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-primary { background: var(--accent); color: white; }
+        
+        article { padding: 60px 0; }
+        article p { margin-bottom: 24px; font-size: 1.05rem; }
+        article h2 { font-size: 1.8rem; color: var(--primary); margin: 48px 0 24px; }
+        article h3 { font-size: 1.4rem; color: var(--primary); margin: 36px 0 16px; }
+        
+        .interview-format p { margin-bottom: 20px; }
+        .interview-format .question { font-weight: 600; color: var(--primary); }
+        .interview-format .answer { padding-left: 0; }
+        
+        blockquote { border-left: 4px solid var(--accent); padding-left: 24px; margin: 32px 0; font-style: italic; color: var(--text-light); font-size: 1.15rem; }
+        
+        .article-footer { background: var(--bg-alt); padding: 40px 0; margin-top: 60px; }
+        .article-footer .container { display: flex; gap: 40px; align-items: center; }
+        .author-image { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+        .author-info h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .author-info p { color: var(--text-light); font-size: 0.95rem; }
+        
+        footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+        footer p { opacity: 0.7; }
+        
+        @media (max-width: 768px) {
+            .cover-feature { flex-direction: column; }
+            .cover-image { width: 150px; margin: 0 auto; }
+            .article-header h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container" style="max-width: 1200px;">
+            <a href="../index.html" class="logo">Chris O'Hara</a>
+            <ul class="nav-links">
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li><a href="../books.html">Books</a></li>
+                <li><a href="../speaking.html">Speaking</a></li>
+                <li><a href="../writing.html">Writing</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="article-header">
+        <div class="container">
+            <div class="article-meta">
+                <span>📰 DM Magazine Cover Story</span>
+                <span>June 2025</span>
+            </div>
+            <h1>The Future of Customer Data Management</h1>
+            <p style="opacity: 0.9; font-size: 1.2rem;">An in-depth interview with Chris O'Hara, Global Product Marketing Lead, SAP Data and Analytics</p>
+        </div>
+    </div>
+
+    <section style="padding: 40px 0;">
+        <div class="container">
+            <div class="cover-feature">
+                <div class="cover-image">
+                    <img src="../assets/images/dm-magazine-cover-june-2025.jpg" alt="DM Magazine Cover">
+                </div>
+                <div class="cover-info">
+                    <h2>Featured in DM Magazine</h2>
+                    <p>This interview originally appeared as the cover story in DM Magazine (Vol. 38, No. 6), Canada's authority for data-driven business and marketing.</p>
+                    <a href="https://issuu.com/dmn.ca/docs/dm_magazine_june_2025?fr=xKAE9_zMzMw" class="btn btn-primary" target="_blank">Read Full Issue</a>
+                    <a href="https://www.customerfirstthinking.ca/the-future-of-customer-data-management-an-interview-with-chris-ohara-global-product-marketing-lead-sap-data-and-analytics/" class="btn btn-primary" style="margin-left: 10px;" target="_blank">Original Interview</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <article>
+        <div class="container interview-format">
+            <h2>From AdTech to Enterprise Data Fabric</h2>
+            
+            <p>The journey from Salesforce to SAP reveals a fundamental shift in how enterprises think about customer data — moving from marketing-specific solutions to unified data layers that power the entire organization.</p>
+            
+            <blockquote>"We should have underlying all these separate siloed applications like a beautiful data fabric that stitches everything together, that semantically unifies data, understands what it means."</blockquote>
+            
+            <p>At Salesforce, the acquisition of Krux brought data management capabilities that could identify customers beyond email — understanding who people were online, their interests, and intentions. But the question became: why keep all this intelligence locked in Marketing Cloud when it could power the entire CRM?</p>
+            
+            <p>The same pattern emerged at SAP. "I looked around and said, geez, SAP is really similar. We built ERP, that's our core business. Why do we have this really cool data management technology only in CX? That's really dumb."</p>
+            
+            <h2>Building the Data Fabric</h2>
+            
+            <p>The solution is what SAP now calls a data fabric — a unified layer that sits underneath all applications, connecting ERP, supply chain, pricing, finance, HR, and customer experience data into a single semantic model.</p>
+            
+            <blockquote>"We should build a knowledge graph under that, that connects all these different sockets of attributes together and knows how they relate to each other. And that ultimately, when AI really becomes of age and there's this thing called agentic interactions — that will give these agents someone to talk to so they can be really effective."</blockquote>
+            
+            <p>This evolution from CDP to data cloud represents more than a product shift — it's a fundamental rethinking of how enterprises manage and leverage customer intelligence across every function.</p>
+            
+            <h2>The Future of AdTech</h2>
+            
+            <p>On Google's retreat from phasing out cookies and Meta's AI-driven advertising ambitions: "I never really was a big believer in the digital ad ecosystem. AdTech was largely 90% about banner ads. And they're really not good ads — the creative's terrible, you can't convey a message."</p>
+            
+            <p>The future lies in connected TV with closed-loop attribution: "If I can digitally target a household through my TV, and I'm partnered with MasterCard, I could relate half or more of my attribution to an online purchase. Then I'm really in business."</p>
+            
+            <h2>Customer Data as Strategic Asset</h2>
+            
+            <p>On whether companies finally see customer data as strategic: "The notion that we can ignore customer data is absurd because the whole world can't operate without the customer. The customer is the atom — it's the atomic level of information in our enterprise."</p>
+            
+            <p>The Keurig story illustrates the potential: A $12 chip in 100 million coffee machines could collect data on brewing habits, third-party cup usage, enable automatic reordering, and even create the largest out-of-home advertising network through video screens on coffee machines.</p>
+            
+            <blockquote>"Every single company in the world sells to people. Whether you're Volkswagen or a big B2B software company, some dude or woman is writing a check for your stuff. So it's a people-based system."</blockquote>
+            
+            <h2>What's Next</h2>
+            
+            <p>The convergence of data fabric architecture, semantic understanding, knowledge graphs, and agentic AI points to a future where customer intelligence isn't just a marketing function — it's the foundation of the entire enterprise.</p>
+            
+            <p>As Chris puts it: "Even though I'm getting further and further away from AdTech and marketing, everything I learned is highly applicable. Everything we're doing ultimately results in a consumer or a person creating data, interacting with data, and being the endpoint of all that activity, all that intelligence."</p>
+            
+        </div>
+    </article>
+
+    <div class="article-footer">
+        <div class="container">
+            <img src="../assets/images/chris-ohara.jpg" alt="Chris O'Hara" class="author-image">
+            <div class="author-info">
+                <h3>Chris O'Hara</h3>
+                <p>VP, Marketing / Head of Planning, Analytics & Intelligent Applications at SAP. Author of "Customer Data Platforms" (Wiley) and "Data Driven" (McGraw Hill). <a href="../about.html">Learn more →</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chris O'Hara. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
