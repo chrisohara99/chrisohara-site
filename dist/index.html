@@ -7,15 +7,11 @@
     <meta name="description" content="Global product marketing leader specializing in data storytelling. Author of Data-Driven and Customer Data Platforms.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --dark-bg: #0f1923;
-            --gold: #d4c5a9;
-            --cream: #e8e0d4;
-            --muted: #8a9bb0;
-            --coral: #c94a5c;
-            --coral-light: #d4596a;
+            --primary: #1a1a2e;
+            --secondary: #16213e;
             --accent: #e94560;
             --text: #333;
             --text-light: #666;
@@ -23,549 +19,79 @@
             --bg-alt: #f8f9fa;
             --border: #e5e5e5;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            background: var(--bg);
-        }
-        
-        /* ===== ANIMATIONS ===== */
-        @keyframes revealLine {
-            from { transform: scaleX(0); }
-            to { transform: scaleX(1); }
-        }
-        
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-        
-        /* ===== DARK HERO SECTION ===== */
-        .hero-dark {
-            min-height: 100vh;
-            background: var(--dark-bg);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .hero-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 28px 48px;
-            animation: fadeUp 0.8s ease 0.3s both;
-        }
-        
-        .logo-elegant {
-            cursor: pointer;
-            position: relative;
-            display: inline-flex;
-            align-items: baseline;
-            gap: 2px;
-            text-decoration: none;
-        }
-        
-        .logo-elegant .first {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 300;
-            color: var(--cream);
-            letter-spacing: 0.5px;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .logo-elegant .separator {
-            display: inline-block;
-            width: 1px;
-            height: 18px;
-            background: rgba(232,224,212,0.2);
-            margin: 0 10px;
-            transition: all 0.5s ease;
-            align-self: center;
-        }
-        
-        .logo-elegant .last {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 500;
-            font-style: italic;
-            color: var(--gold);
-            letter-spacing: 1px;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .logo-elegant .underline {
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            transform: scaleX(0);
-            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            transform-origin: center;
-        }
-        
-        .logo-elegant:hover .first,
-        .logo-elegant:hover .last {
-            background: linear-gradient(90deg, var(--cream) 0%, var(--gold) 40%, #f0e6d3 60%, var(--cream) 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 2.5s ease infinite;
-        }
-        
-        .logo-elegant:hover .separator {
-            background: rgba(212,197,169,0.5);
-            transform: rotate(15deg);
-        }
-        
-        .logo-elegant:hover .underline {
-            transform: scaleX(1);
-        }
-        
-        .nav-links-dark {
-            display: flex;
-            gap: 36px;
-            list-style: none;
-        }
-        
-        .nav-links-dark a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 13px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: color 0.4s ease;
-            font-weight: 400;
-        }
-        
-        .nav-links-dark a:hover {
-            color: var(--gold);
-        }
-        
-        .hero-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(212,197,169,0.15) 20%, rgba(212,197,169,0.15) 80%, transparent);
-            animation: revealLine 1s ease 0.4s both;
-            transform-origin: center;
-        }
-        
-        .hero-content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            padding: 80px 48px;
-        }
-        
-        .hero-text-dark {
-            max-width: 720px;
-        }
-        
-        .hero-text-dark h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(42px, 6vw, 72px);
-            font-weight: 300;
-            color: var(--cream);
-            line-height: 1.1;
-            margin: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.3s both;
-        }
-        
-        .hero-text-dark h1 .highlight {
-            font-style: italic;
-            color: var(--gold);
-        }
-        
-        .hero-text-dark .tagline {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
-            font-weight: 300;
-            color: var(--muted);
-            line-height: 1.7;
-            margin-top: 24px;
-            max-width: 540px;
-            animation: fadeUp 0.8s ease 0.5s both;
-        }
-        
-        .hero-cta-dark {
-            display: flex;
-            gap: 16px;
-            margin-top: 40px;
-            animation: fadeUp 0.8s ease 0.7s both;
-        }
-        
-        .btn-coral {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 14px 32px;
-            background: linear-gradient(135deg, var(--coral), var(--coral-light));
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-coral:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(201,74,92,0.3);
-        }
-        
-        .btn-outline-dark {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 12px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 14px 32px;
-            background: transparent;
-            color: var(--muted);
-            border: 1px solid rgba(138,155,176,0.3);
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-outline-dark:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-            transform: translateY(-2px);
-        }
-        
-        /* ===== REST OF PAGE (LIGHT SECTIONS) ===== */
-        h2, h3, h4 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-        
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-        
-        a:hover {
-            opacity: 0.8;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        section.alt {
-            background: var(--bg-alt);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--dark-bg);
-            margin-bottom: 16px;
-        }
-        
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .highlights {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-        
-        .highlight-card {
-            background: white;
-            padding: 40px 32px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid var(--border);
-        }
-        
-        .highlight-stat {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            color: var(--coral);
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-        
-        .highlight-card h3 {
-            font-size: 1.25rem;
-            color: var(--dark-bg);
-            margin-bottom: 12px;
-        }
-        
-        .highlight-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-        
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        
-        .book-card {
-            display: flex;
-            gap: 30px;
-            background: white;
-            padding: 32px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid var(--border);
-        }
-        
-        .book-card img {
-            width: 140px;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-        
-        .book-info h3 {
-            font-size: 1.4rem;
-            color: var(--dark-bg);
-            margin-bottom: 4px;
-        }
-        
-        .book-info .publisher {
-            color: var(--coral);
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-        
-        .book-info p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.2s;
-        }
-        
-        .btn-primary {
-            background: var(--coral);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--coral-light);
-            opacity: 1;
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text);
-        }
-        
-        .btn-outline:hover {
-            border-color: var(--dark-bg);
-            color: var(--dark-bg);
-            opacity: 1;
-        }
-        
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        
-        .post-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        
-        .post-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            opacity: 1;
-        }
-        
-        .post-card-content {
-            padding: 24px;
-        }
-        
-        .post-meta {
-            color: var(--coral);
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-        
-        .post-card h3 {
-            font-size: 1.2rem;
-            color: var(--dark-bg);
-            margin-bottom: 8px;
-        }
-        
-        .post-card p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        footer {
-            background: var(--dark-bg);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-about h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-            color: var(--cream);
-        }
-        
-        .footer-about p {
-            color: var(--muted);
-            line-height: 1.8;
-        }
-        
-        .footer-links h4 {
-            font-size: 1rem;
-            margin-bottom: 20px;
-            color: var(--cream);
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: var(--muted);
-            transition: color 0.2s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--gold);
-            opacity: 1;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-nav {
-                padding: 20px 24px;
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .nav-links-dark {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero-content {
-                padding: 40px 24px;
-            }
-            
-            .hero-cta-dark {
-                flex-direction: column;
-            }
-            
-            .highlights,
-            .books-grid,
-            .posts-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .book-card {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.8; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 16px 0; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        /* Hero */
+        .hero { padding: 160px 0 100px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; }
+        .hero-content { display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: center; }
+        .hero h1 { font-size: 3.5rem; color: white; margin-bottom: 24px; line-height: 1.15; }
+        .hero h1 span { color: var(--accent); }
+        .hero .tagline { font-size: 1.3rem; opacity: 0.9; margin-bottom: 32px; font-weight: 300; }
+        .hero .cta-buttons { display: flex; gap: 16px; }
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #d63850; opacity: 1; }
+        .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color: white; opacity: 1; }
+        .hero-image img { width: 100%; border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
+        
+        /* Sections */
+        section { padding: 80px 0; }
+        section.alt { background: var(--bg-alt); }
+        .section-title { font-size: 2.2rem; color: var(--primary); margin-bottom: 16px; text-align: center; }
+        .section-subtitle { color: var(--text-light); text-align: center; margin-bottom: 50px; font-size: 1.1rem; }
+        
+        /* Features */
+        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .feature { text-align: center; padding: 30px; }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 20px; }
+        .feature h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 12px; }
+        .feature p { color: var(--text-light); font-size: 0.95rem; }
+        
+        /* Books */
+        .books-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 900px; margin: 0 auto; }
+        .book-card { display: flex; gap: 24px; background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+        .book-card img { width: 100px; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .book-card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 6px; }
+        .book-card .meta { color: var(--accent); font-size: 0.85rem; font-weight: 500; margin-bottom: 10px; }
+        .book-card p { color: var(--text-light); font-size: 0.9rem; }
+        
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; padding: 80px 0; }
+        .cta-section h2 { color: white; font-size: 2.2rem; margin-bottom: 16px; }
+        .cta-section p { opacity: 0.9; margin-bottom: 32px; font-size: 1.1rem; }
+        
+        footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+        footer p { opacity: 0.7; }
+        
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-image { max-width: 250px; margin: 0 auto; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero .cta-buttons { justify-content: center; }
+            .features { grid-template-columns: 1fr; }
+            .books-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
-    <!-- ===== DARK HERO SECTION ===== -->
-    <section class="hero-dark">
-        <nav class="hero-nav">
-            <a href="index.html" class="logo-elegant">
-                <span class="first">Chris</span>
-                <span class="separator"></span>
-                <span class="last">O'Hara</span>
-                <span class="underline"></span>
-            </a>
-            <ul class="nav-links-dark">
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Chris O'Hara</a>
+            <ul class="nav-links">
                 <li><a href="about.html">About</a></li>
                 <li><a href="resume.html">Resume</a></li>
                 <li><a href="books.html">Books</a></li>
@@ -573,171 +99,89 @@
                 <li><a href="writing.html">Writing</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </nav>
-        
-        <div class="hero-divider"></div>
-        
-        <div class="hero-content">
-            <div class="hero-text-dark">
-                <h1><span class="highlight">Data</span>-Driven Marketing Leader</h1>
-                <p class="tagline">Global product marketing executive specializing in data storytelling. Author. Speaker. Building the future of customer intelligence at SAP.</p>
-                <div class="hero-cta-dark">
-                    <a href="books.html" class="btn-coral">Read My Books</a>
-                    <a href="resume.html" class="btn-outline-dark">View Resume</a>
-                </div>
-            </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- ===== HIGHLIGHTS SECTION ===== -->
-    <section class="alt">
+    <section class="hero">
         <div class="container">
-            <div class="section-header">
-                <h2>Career Highlights</h2>
-                <p>Two decades driving growth at the intersection of data, marketing, and technology.</p>
-            </div>
-            <div class="highlights">
-                <div class="highlight-card">
-                    <div class="highlight-stat">$2.3B</div>
-                    <h3>Pipeline Touched</h3>
-                    <p>Led product marketing for Salesforce's Data & Identity portfolio, directly supporting over 600 client meetings.</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-stat">8</div>
-                    <h3>Books Published</h3>
-                    <p>Including award-winning Data-Driven (McGraw Hill) and Customer Data Platforms (Wiley), plus six with Random House.</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-stat">20+</div>
-                    <h3>Years in MarTech</h3>
-                    <p>From startups to enterprise — Krux, Salesforce, SAP — building and scaling data-driven marketing solutions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CURRENT PROJECT ===== -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2>Current Project</h2>
-                <p>Exploring AI's transformation of product marketing.</p>
-            </div>
-            <div style="background: linear-gradient(135deg, #3b82f6 0%, #1e3a5f 100%); border-radius: 16px; padding: 50px; color: white; display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 280px;">
-                    <h3 style="font-size: 2rem; margin-bottom: 16px; color: white;">Future of PMM</h3>
-                    <p style="opacity: 0.9; margin-bottom: 24px; font-size: 1.1rem; line-height: 1.7;">A newsletter and resource hub exploring how AI is transforming product marketing. Tools, skillsets, and best practices for the modern PMM.</p>
-                    <a href="https://futureofpmm.com" class="btn btn-primary" style="background: white; color: #1e3a5f;" target="_blank">Visit futureofpmm.com →</a>
-                </div>
-                <div style="flex: 0 0 auto;">
-                    <div style="background: white; padding: 20px; border-radius: 12px; text-align: center;">
-                        <div style="font-size: 3rem; margin-bottom: 8px;">🤖</div>
-                        <div style="color: #1e3a5f; font-weight: 600; font-size: 0.9rem;">AI-Powered<br>Insights</div>
+            <div class="hero-content">
+                <div>
+                    <h1>Data-Driven Marketing <span>Leader</span></h1>
+                    <p class="tagline">Global product marketing executive, bestselling author, and expert in customer data strategy, AI, and marketing technology transformation.</p>
+                    <div class="cta-buttons">
+                        <a href="about.html" class="btn btn-primary">Learn More</a>
+                        <a href="books.html" class="btn btn-outline">My Books</a>
                     </div>
                 </div>
+                <div class="hero-image">
+                    <img src="assets/images/chris-ohara.jpg" alt="Chris O'Hara">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FEATURED BOOKS ===== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">What I Do</h2>
+            <p class="section-subtitle">Helping companies transform customer data into competitive advantage</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Product Marketing</h3>
+                    <p>Building go-to-market strategies for enterprise data platforms at SAP and Salesforce, driving billions in pipeline.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <h3>Author & Thought Leader</h3>
+                    <p>Two award-winning business books on customer data, plus 40+ columns in AdExchanger, Econsultancy, and more.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Speaker & Advisor</h3>
+                    <p>Keynotes and panels at industry events worldwide on CDPs, AI in marketing, and the future of customer experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="alt">
         <div class="container">
-            <div class="section-header">
-                <h2>Featured Books</h2>
-                <p>Thought leadership on the future of customer data and marketing.</p>
-            </div>
+            <h2 class="section-title">Published Works</h2>
+            <p class="section-subtitle">Award-winning books on data-driven marketing</p>
+            
             <div class="books-grid">
                 <div class="book-card">
-                    <img src="assets/images/cdp-cover.png" alt="Customer Data Platforms book cover">
-                    <div class="book-info">
+                    <img src="assets/images/cdp-cover.png" alt="Customer Data Platforms">
+                    <div>
                         <h3>Customer Data Platforms</h3>
-                        <div class="publisher">Wiley, 2020</div>
-                        <p>The definitive guide to CDPs — how to capture, unify, activate, and analyze customer data for personalization at scale.</p>
-                        <a href="https://www.amazon.com/Customer-Data-Platforms-personalization-privacy-compliant/dp/1119790115" class="btn btn-primary" target="_blank">Buy on Amazon</a>
+                        <div class="meta">Wiley · 2020 · #1 Amazon Best Seller</div>
+                        <p>The definitive guide to capturing, unifying, and activating customer data while respecting privacy.</p>
                     </div>
                 </div>
                 <div class="book-card">
-                    <img src="assets/images/data-driven-cover.png" alt="Data Driven book cover">
-                    <div class="book-info">
+                    <img src="assets/images/data-driven-cover.png" alt="Data Driven">
+                    <div>
                         <h3>Data Driven</h3>
-                        <div class="publisher">McGraw Hill, 2018 · Axiom Silver Medal</div>
-                        <p>A practical roadmap to the modern marketing landscape — cloud, mobile, social, IoT, and AI strategies for customer engagement.</p>
-                        <a href="https://datadrivenmarketingbook.com/" class="btn btn-primary" target="_blank">Learn More</a>
+                        <div class="meta">McGraw Hill · 2018 · Axiom Silver Medal</div>
+                        <p>How to harness data and AI to reinvent customer engagement in the modern marketing landscape.</p>
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="books.html" class="btn btn-outline">View All Books →</a>
-            </div>
         </div>
     </section>
 
-    <!-- ===== LATEST WRITING ===== -->
-    <section>
+    <section class="cta-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Latest Writing</h2>
-                <p>Insights on data, marketing technology, and the future of customer experience.</p>
-            </div>
-            <div class="posts-grid">
-                <a href="writing.html" class="post-card">
-                    <div class="post-card-content">
-                        <div class="post-meta">April 2022</div>
-                        <h3>From Next-Best-Action to Next-Best-Dollar</h3>
-                        <p>How richer data, actionable intelligence, and pervasive automation are transforming customer engagement.</p>
-                    </div>
-                </a>
-                <a href="writing.html" class="post-card">
-                    <div class="post-card-content">
-                        <div class="post-meta">March 2022</div>
-                        <h3>Data Gravity: Less Data, Better Data</h3>
-                        <p>Why "more is better" misses the point in CDP strategy, and how to build meaningful first-party data assets.</p>
-                    </div>
-                </a>
-                <a href="writing.html" class="post-card">
-                    <div class="post-card-content">
-                        <div class="post-meta">Enterprise CX</div>
-                        <h3>Customer Centricity at Scale</h3>
-                        <p>Bridging organizational silos to enable real-time customer insights and personalized experiences.</p>
-                    </div>
-                </a>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="writing.html" class="btn btn-outline">Read All Posts →</a>
-            </div>
+            <h2>Let's Connect</h2>
+            <p>Available for speaking engagements, consulting, and collaboration.</p>
+            <a href="contact.html" class="btn btn-primary">Get in Touch</a>
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>Chris O'Hara</h3>
-                    <p>Global product marketing leader with 20+ years building data-driven marketing solutions. Currently VP PMM at SAP, previously VP at Salesforce. Author of 8 books on marketing technology and food & drink.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigate</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                        <li><a href="books.html">Books</a></li>
-                        <li><a href="speaking.html">Speaking</a></li>
-                        <li><a href="writing.html">Writing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/chrisohara1/" target="_blank">LinkedIn</a></li>
-                        <li><a href="mailto:chrisohara1968@gmail.com">Email</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Chris O'Hara. All rights reserved.</p>
-            </div>
+            <p>&copy; 2025 Chris O'Hara. All rights reserved.</p>
         </div>
     </footer>
 </body>
