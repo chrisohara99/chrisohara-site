@@ -91,6 +91,7 @@
         @media (max-width: 768px) {
             .posts-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
+            .featured-grid { grid-template-columns: 1fr !important; }
         }
     </style>
 </head>
@@ -140,10 +141,17 @@
     <section>
         <div class="container">
             
-            <div class="featured-project">
-                <h3>🚀 Future of PMM Newsletter</h3>
-                <p>My latest project exploring how AI is transforming product marketing. Weekly insights on tools, skillsets, and best practices for the modern PMM.</p>
-                <a href="https://futureofpmm.com" class="btn" target="_blank">Read at futureofpmm.com →</a>
+            <div class="featured-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 50px;">
+                <div class="featured-project" style="margin-bottom: 0;">
+                    <h3>🚀 Future of PMM</h3>
+                    <p>How AI is transforming product marketing. Weekly insights on tools, skillsets, and best practices for the modern PMM.</p>
+                    <a href="https://futureofpmm.com" class="btn" target="_blank">futureofpmm.com →</a>
+                </div>
+                <div class="featured-project" style="margin-bottom: 0; background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);">
+                    <h3>📚 The Full Stack</h3>
+                    <p>Long-form essays on marketing, technology, data, and the customer experience. 15+ years of industry thinking.</p>
+                    <a href="https://thefullstack.chrisohara.com" class="btn" target="_blank">thefullstack.chrisohara.com →</a>
+                </div>
             </div>
             
             <h2 class="section-title">Latest from Future of PMM</h2>
