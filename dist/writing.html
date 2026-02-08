@@ -92,6 +92,8 @@
             .posts-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             .featured-grid { grid-template-columns: 1fr !important; }
+            .featured-project { flex-direction: column !important; text-align: center; }
+            .featured-project img { width: 120px !important; margin: 0 auto; }
         }
     </style>
 </head>
@@ -147,10 +149,13 @@
                     <p>How AI is transforming product marketing. Weekly insights on tools, skillsets, and best practices for the modern PMM.</p>
                     <a href="https://futureofpmm.com" class="btn" target="_blank">futureofpmm.com →</a>
                 </div>
-                <div class="featured-project" style="margin-bottom: 0; background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);">
-                    <h3>📚 The Full Stack</h3>
-                    <p>Long-form essays on marketing, technology, data, and the customer experience. 15+ years of industry thinking.</p>
-                    <a href="https://thefullstack.chrisohara.com" class="btn" target="_blank">thefullstack.chrisohara.com →</a>
+                <div class="featured-project" style="margin-bottom: 0; background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); display: flex; gap: 24px; align-items: center;">
+                    <img src="assets/images/fullstack-preview.jpg" alt="The Full Stack" style="width: 140px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                    <div>
+                        <h3>📚 The Full Stack</h3>
+                        <p>Long-form essays on marketing, technology, data, and the customer experience. 15+ years of industry thinking.</p>
+                        <a href="https://thefullstack.chrisohara.com" class="btn" target="_blank">thefullstack.chrisohara.com →</a>
+                    </div>
                 </div>
             </div>
             
