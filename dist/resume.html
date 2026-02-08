@@ -41,6 +41,20 @@
         .nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
         .nav-links a:hover { color: var(--accent); }
         
+        /* Mobile Menu */
+        .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--primary); margin: 5px 0; transition: 0.3s; }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        
+        .mobile-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .mobile-nav.active { display: block; }
+        .mobile-nav ul { list-style: none; padding: 16px 24px; }
+        .mobile-nav li { padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .mobile-nav li:last-child { border-bottom: none; }
+        .mobile-nav a { color: var(--text); font-size: 1rem; font-weight: 500; }
+        
         .page-header { padding: 140px 0 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; }
         .page-header h1 { font-size: 3rem; color: white; margin-bottom: 12px; }
         .page-header .tagline { font-size: 1.2rem; opacity: 0.95; margin-bottom: 8px; font-weight: 600; }
@@ -102,9 +116,30 @@
                 <li><a href="speaking.html">Speaking</a></li>
                 <li><a href="writing.html">Writing</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                        </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        });
+    </script>
 
     <div class="page-header">
         <div class="container">
