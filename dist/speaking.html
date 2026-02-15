@@ -105,7 +105,14 @@
             .speaking-topics { grid-template-columns: 1fr; }
             .appearance { flex-direction: column; gap: 8px; }
             .nav-links { display: none; }
+            .menu-toggle { display: block; }
             .page-header h1 { font-size: 2.2rem; }
+            .featured-media-card { flex-direction: column !important; }
+            .featured-media-card img { width: 100% !important; max-width: 280px !important; margin: 0 auto; }
+            .featured-media-card > div:first-child { width: 100% !important; min-width: unset !important; display: flex; justify-content: center; }
+            .featured-media-card h3 { font-size: 1.3rem !important; }
+            .featured-media-card .btn { display: block; text-align: center; margin-bottom: 10px; }
+            .featured-media-card > div:last-child > div { flex-direction: column !important; }
         }
     </style>
 </head>
@@ -156,7 +163,7 @@
         <div class="container">
             <h2 class="section-title" style="margin-bottom: 30px;">⭐ Featured Media</h2>
             
-            <div class="media-item" style="display: flex; gap: 30px; align-items: start; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin-bottom: 24px;">
+            <div class="media-item featured-media-card" style="display: flex; gap: 30px; align-items: start; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin-bottom: 24px;">
                 <img src="assets/images/dm-magazine-cover-june-2025.jpg" alt="DM Magazine Cover - Chris O'Hara" style="width: 180px; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.2);">
                 <div>
                     <span class="type-badge" style="background: #dc2626;">Cover Story</span>
@@ -171,7 +178,7 @@
                 </div>
             </div>
             
-            <div class="media-item" style="display: flex; gap: 30px; align-items: start; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin-bottom: 24px;">
+            <div class="media-item featured-media-card" style="display: flex; gap: 30px; align-items: start; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin-bottom: 24px;">
                 <img src="assets/images/cc-magazine-cookies-monsters.jpg" alt="Cookies & Monsters - CC Magazine" style="width: 180px; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.2);">
                 <div>
                     <span class="type-badge" style="background: #6366f1;">Alumni Feature</span>
@@ -184,7 +191,7 @@
                 </div>
             </div>
             
-            <div class="media-item" style="display: flex; gap: 30px; align-items: start; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+            <div class="media-item featured-media-card" style="display: flex; gap: 30px; align-items: start; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
                 <div style="min-width: 180px; height: 180px; background: linear-gradient(135deg, #1a1a2e 0%, #4a1942 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,0.2);">
                     <div style="text-align: center; color: white;">
                         <div style="font-size: 3rem;">🎙️</div>
