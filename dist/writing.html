@@ -34,7 +34,6 @@
         .nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
         .nav-links a:hover { color: var(--accent); }
         
-        /* Mobile Menu */
         .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
         .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--primary); margin: 5px 0; transition: 0.3s; }
         .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
@@ -64,8 +63,8 @@
         .featured-project .btn { background: white; color: #1e3a5f; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; }
         
         .posts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px; }
-        .post-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); transition: transform 0.2s; }
-        .post-card:hover { transform: translateY(-4px); }
+        .post-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); transition: transform 0.2s; text-decoration: none; display: block; }
+        .post-card:hover { transform: translateY(-4px); opacity: 1; }
         .post-card .tag { display: inline-block; background: #e0e7ff; color: #3b82f6; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 12px; }
         .post-card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
         .post-card p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 12px; }
@@ -91,9 +90,9 @@
         @media (max-width: 768px) {
             .posts-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
+            .menu-toggle { display: block; }
             .featured-grid { grid-template-columns: 1fr !important; }
             .featured-project { flex-direction: column !important; text-align: center; }
-            .featured-project img { width: 120px !important; margin: 0 auto; }
         }
     </style>
 </head>
@@ -108,7 +107,7 @@
                 <li><a href="speaking.html">Speaking</a></li>
                 <li><a href="writing.html">Writing</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                        </ul>
+            </ul>
             <button class="menu-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -160,29 +159,29 @@
             <p class="section-subtitle">Recent posts on AI and product marketing</p>
             
             <div class="posts-grid">
-                <a href="https://futureofpmm.com/posts/post-001.html" class="post-card" target="_blank">
-                    <span class="tag">Tools</span>
-                    <h3>8 Ways AI is Transforming Digital Marketing in 2026</h3>
-                    <p>From predictive analytics to automated content creation, AI is reshaping how marketers work.</p>
-                    <div class="date">January 2026</div>
+                <a href="https://futureofpmm.com/vendor-of-the-week-evertune.html" class="post-card" target="_blank">
+                    <span class="tag" style="background: #fef3c7; color: #d97706;">⭐ Vendor of the Week</span>
+                    <h3>Evertune: The Trade Desk Vets Building the Bloomberg Terminal for AI Search</h3>
+                    <p>Brian Stempeck scaled a $50B adtech company. Now he's betting GEO will become the most important channel no PMM is thinking about yet.</p>
+                    <div class="date">March 2, 2026</div>
                 </a>
-                <a href="https://futureofpmm.com/posts/post-002.html" class="post-card" target="_blank">
-                    <span class="tag">Tools</span>
-                    <h3>The Top 34 AI Marketing Tools Every PMM Should Know</h3>
-                    <p>A comprehensive guide to the AI tools transforming product marketing workflows.</p>
-                    <div class="date">January 2026</div>
+                <a href="https://futureofpmm.com/month-of-ai-pmm-stories.html" class="post-card" target="_blank">
+                    <span class="tag" style="background: #fee2e2; color: #dc2626;">🔥 Featured</span>
+                    <h3>I Read Every AI + PMM Story for a Month. Here's What's Actually Coming.</h3>
+                    <p>After 35 editions and 180 articles, the pattern is unmistakable: buyers are becoming agents, and only 6% of marketers are ready.</p>
+                    <div class="date">March 1, 2026</div>
                 </a>
-                <a href="https://futureofpmm.com/posts/post-003.html" class="post-card" target="_blank">
+                <a href="https://futureofpmm.com/user-of-the-week-soo-shim.html" class="post-card" target="_blank">
+                    <span class="tag" style="background: #fef3c7; color: #d97706;">🏆 User of the Week</span>
+                    <h3>Soo Shim: Building BattleCoach — AI That Coaches Sellers in Real-Time</h3>
+                    <p>SAP's Senior Director of Global CI is encoding competitive intelligence into an agentic AI system that scales.</p>
+                    <div class="date">February 26, 2026</div>
+                </a>
+                <a href="https://futureofpmm.com/agentic-pmm-buyer-hired-agent.html" class="post-card" target="_blank">
                     <span class="tag">Strategy</span>
-                    <h3>Predictive vs Generative AI: What Marketers Need to Know</h3>
-                    <p>Understanding the different types of AI and when to use each in your marketing stack.</p>
-                    <div class="date">January 2026</div>
-                </a>
-                <a href="https://futureofpmm.com/posts/post-004.html" class="post-card" target="_blank">
-                    <span class="tag">Strategy</span>
-                    <h3>A Simple Guide to AI Content Marketing</h3>
-                    <p>How to leverage AI for content creation without losing your brand voice.</p>
-                    <div class="date">January 2026</div>
+                    <h3>Your Buyer Just Hired an Agent. Now What?</h3>
+                    <p>Everything we assume about product marketing breaks when an AI agent is doing the evaluation.</p>
+                    <div class="date">February 26, 2026</div>
                 </a>
             </div>
             
@@ -196,29 +195,29 @@
             <p class="section-subtitle">Long-form essays on data, technology, and customer experience</p>
             
             <div class="posts-grid">
-                <a href="https://thefullstack.chrisohara.com/articles/inventory-aware-campaign-agent.html" class="post-card" target="_blank">
-                    <span class="tag" style="background: #fef3c7; color: #d97706;">AI Agents</span>
-                    <h3>The Inventory-Aware Campaign Agent: Finding the Next-Best Dollar</h3>
-                    <p>Marketing budgets can change fast. But without real-time connection to supply chain systems, that agility becomes liability.</p>
-                    <div class="date">February 2026</div>
+                <a href="https://thefullstack.chrisohara.com/articles/month-of-ai-pmm-stories.html" class="post-card" target="_blank">
+                    <span class="tag" style="background: #fee2e2; color: #dc2626;">🔥 Featured</span>
+                    <h3>I Read Every AI + PMM Story for a Month. Here's What's Actually Coming.</h3>
+                    <p>After 35 editions and 180 articles, the pattern is unmistakable. The gap between AI-native PMMs and everyone else is accelerating.</p>
+                    <div class="date">March 1, 2026</div>
                 </a>
-                <a href="https://thefullstack.chrisohara.com/articles/marketing-customer-data-erp-problem.html" class="post-card" target="_blank">
-                    <span class="tag" style="background: #fef3c7; color: #d97706;">Data Fabric</span>
-                    <h3>Why Marketing's Customer Data Problem is Actually an ERP Problem</h3>
-                    <p>CDPs promised to unify customer data, but they missed the point entirely. The customer record that matters is in your ERP.</p>
-                    <div class="date">February 2026</div>
+                <a href="https://thefullstack.chrisohara.com/articles/acquisition-as-confession.html" class="post-card" target="_blank">
+                    <span class="tag" style="background: #fef3c7; color: #d97706;">M&A</span>
+                    <h3>Acquisition as Confession: What Salesforce's $4B Bet on Informatica Really Means</h3>
+                    <p>Sometimes the most revealing thing a company does isn't launch a product—it's buy one.</p>
+                    <div class="date">February 25, 2026</div>
                 </a>
-                <a href="https://thefullstack.chrisohara.com/articles/cdp-book-five-years.html" class="post-card" target="_blank">
-                    <span class="tag" style="background: #fef3c7; color: #d97706;">CDP</span>
-                    <h3>What We Got Right (and Wrong) About CDPs: A 5-Year Retrospective</h3>
-                    <p>Revisiting the predictions Martin Kihn and I made in our 2020 book—and what we never saw coming.</p>
-                    <div class="date">February 2026</div>
+                <a href="https://thefullstack.chrisohara.com/articles/why-stories-still-win.html" class="post-card" target="_blank">
+                    <span class="tag" style="background: #fef3c7; color: #d97706;">Storytelling</span>
+                    <h3>Why Stories Still Win: The Data Storytelling Playbook for Product Marketers</h3>
+                    <p>In a world drowning in dashboards, the PMMs who can turn data into narrative will own the room.</p>
+                    <div class="date">February 24, 2026</div>
                 </a>
-                <a href="https://thefullstack.chrisohara.com/articles/ai-impact-pmm-skills.html" class="post-card" target="_blank">
-                    <span class="tag" style="background: #fef3c7; color: #d97706;">PMM + AI</span>
-                    <h3>Which Parts of Your PMM Job Will AI Replace? A 37-Box Analysis</h3>
-                    <p>We analyzed all 37 activities in Pragmatic Institute's framework and scored each for AI disruption potential.</p>
-                    <div class="date">February 2026</div>
+                <a href="https://thefullstack.chrisohara.com/articles/olivier-duvelleroy-rag-brain.html" class="post-card" target="_blank">
+                    <span class="tag" style="background: #fef3c7; color: #d97706;">AI + PMM</span>
+                    <h3>Building a Second Brain: How Olivier Duvelleroy Uses RAG to Scale PMM Intelligence</h3>
+                    <p>A conversation about retrieval-augmented generation and the future of knowledge work in product marketing.</p>
+                    <div class="date">February 20, 2026</div>
                 </a>
             </div>
             
@@ -277,7 +276,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Chris O'Hara. All rights reserved.</p>
+            <p>&copy; 2026 Chris O'Hara. All rights reserved.</p>
         </div>
     </footer>
 </body>
