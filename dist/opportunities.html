@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Opportunity Tracker — Chris O'Hara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0f1a;
+            --bg-card: #0f172a;
+            --bg-input: #1e293b;
+            --border: #334155;
+            --border-light: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --text-dark: #475569;
+            --green: #22c55e;
+            --green-bg: #052e16;
+            --green-border: #166534;
+            --yellow: #eab308;
+            --yellow-bg: #422006;
+            --yellow-border: #854d0e;
+            --red: #ef4444;
+            --red-bg: #350a0a;
+            --red-border: #991b1b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+        
+        /* Auth Gate */
+        .auth-gate {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .auth-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .auth-box h2 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        .auth-box p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .auth-box input {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 12px 14px;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .auth-box input:focus {
+            outline: none;
+            border-color: var(--text-muted);
+        }
+        .auth-btn {
+            width: 100%;
+            background: var(--text-primary);
+            color: var(--bg-dark);
+            border: none;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .auth-btn:hover { background: #e2e8f0; }
+        .auth-error {
+            color: var(--red);
+            font-size: 13px;
+            margin-top: 12px;
+            display: none;
+        }
+        
+        /* Main Content */
+        .protected-content { display: none; }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 28px 20px;
+        }
+        .header-meta {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        
+        /* Filters */
+        .filters {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-muted);
+            padding: 6px 12px;
+            font-size: 11px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .filter-btn.active {
+            background: var(--bg-input);
+            border-color: var(--border);
+            color: var(--text-primary);
+        }
+        .filter-btn .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .add-btn {
+            margin-left: auto;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            font-size: 11px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .add-btn:hover { color: var(--text-primary); }
+        
+        /* Job Cards */
+        .job-card {
+            background: var(--bg-card);
+            border: 1px solid;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .job-card.green { border-color: rgba(22, 101, 52, 0.2); }
+        .job-card.yellow { border-color: rgba(133, 77, 14, 0.2); }
+        .job-card.red { border-color: rgba(153, 27, 27, 0.2); }
+        
+        .job-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+        }
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .status-dot.green { background: var(--green); }
+        .status-dot.yellow { background: var(--yellow); }
+        .status-dot.red { background: var(--red); }
+        
+        .job-info { flex: 1; min-width: 0; }
+        .job-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .company-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .title-sep { font-size: 12px; color: var(--text-muted); }
+        .job-title { font-size: 13px; color: var(--text-secondary); }
+        
+        .status-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            flex-shrink: 0;
+        }
+        .status-label.green { color: var(--green); }
+        .status-label.yellow { color: var(--yellow); }
+        .status-label.red { color: var(--red); }
+        
+        .expand-arrow {
+            font-size: 14px;
+            color: var(--text-dark);
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+        .job-card.expanded .expand-arrow { transform: rotate(180deg); }
+        
+        /* Expanded Details */
+        .job-details {
+            display: none;
+            padding: 0 16px 16px 38px;
+            border-top: 1px solid var(--border-light);
+        }
+        .job-card.expanded .job-details { display: block; }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 14px;
+            margin-bottom: 14px;
+        }
+        .detail-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+        .detail-value {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+        .notes-text {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            white-space: pre-wrap;
+        }
+        .edit-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            font-size: 11px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 14px;
+        }
+        .edit-btn:hover { color: var(--text-primary); }
+        
+        /* Edit Form */
+        .edit-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .form-group label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 8px 10px;
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+        }
+        .form-group textarea {
+            line-height: 1.6;
+            resize: vertical;
+        }
+        .status-btns {
+            display: flex;
+            gap: 8px;
+        }
+        .status-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .status-btn.active.green { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
+        .status-btn.active.yellow { background: var(--yellow-bg); border-color: var(--yellow-border); color: var(--yellow); }
+        .status-btn.active.red { background: var(--red-bg); border-color: var(--red-border); color: var(--red); }
+        
+        .form-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .save-btn {
+            background: var(--text-primary);
+            color: var(--bg-dark);
+            border: none;
+            padding: 8px 18px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .cancel-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 8px 18px;
+            font-size: 12px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .delete-btn {
+            background: transparent;
+            border: 1px solid var(--red-border);
+            color: var(--red);
+            padding: 8px 18px;
+            font-size: 12px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            margin-left: auto;
+        }
+        
+        /* Footer */
+        .footer-actions {
+            margin-top: 28px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            gap: 8px;
+        }
+        .reset-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            font-size: 11px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dark);
+            font-size: 13px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-grid, .details-grid { grid-template-columns: 1fr; }
+            .filters { flex-wrap: wrap; }
+            .add-btn { margin-left: 0; width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Auth Gate -->
+    <div class="auth-gate" id="authGate">
+        <div class="auth-box">
+            <h2>🔒 Opportunity Tracker</h2>
+            <p>Private dashboard — enter access code to continue</p>
+            <input type="password" id="accessCode" placeholder="Enter access code">
+            <button class="auth-btn" id="loginBtn">Access Tracker</button>
+            <div class="auth-error" id="authError">Invalid access code</div>
+        </div>
+    </div>
+    
+    <!-- Protected Content -->
+    <div class="protected-content" id="protectedContent">
+        <div class="container">
+            <div class="header-meta mono">Chris O'Hara — Confidential</div>
+            <h1>Opportunity Tracker</h1>
+            <p class="subtitle">March 2026</p>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All (<span id="count-all">0</span>)</button>
+                <button class="filter-btn" data-filter="green"><span class="dot" style="background:var(--green)"></span> Active (<span id="count-green">0</span>)</button>
+                <button class="filter-btn" data-filter="yellow"><span class="dot" style="background:var(--yellow)"></span> On Hold (<span id="count-yellow">0</span>)</button>
+                <button class="filter-btn" data-filter="red"><span class="dot" style="background:var(--red)"></span> Pass (<span id="count-red">0</span>)</button>
+                <button class="add-btn" id="addBtn">+ Add Opportunity</button>
+            </div>
+            
+            <div id="addForm" style="display:none"></div>
+            <div id="jobList"></div>
+            
+            <div class="footer-actions">
+                <button class="reset-btn" id="resetBtn">Reset to Defaults</button>
+                <button class="reset-btn" id="logoutBtn" style="margin-left:auto">Logout</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    const DEFAULT_JOBS = [
+        { id: "1", company: "Sirion.ai", title: "SVP, Product Marketing", salary: "~$300-350K base + equity (post-Haveli, ~$1B valuation)", contact: "Ajay Agrawal, Founder & CEO", status: "green", notes: "Strongest external option. AI-native CLM category leader. Gartner MQ Leader 4 consecutive years. Haveli Investments (Brian Sheth / Vista pedigree) majority stake at ~$1B. ~$120-165M ARR growing 40-50%, recently profitable. 1,122 employees across 10 offices. Agentic story maps directly to Agent Driven thesis. Follow-up email sent with curriculum, GEO samples, and book arc framing. Draft CLM article in progress for futureofpmm.com." },
+        { id: "2", company: "Insider One (fka Insider)", title: "SVP, Product Marketing", salary: "TBD — likely $280-320K base + equity", contact: "TBD — reach via recruiter or Hande Cilingir (CEO)", status: "yellow", notes: "Well-capitalized ($500M Series E, General Atlantic, $2B valuation). 1,500 employees, 28 countries. Gartner/Forrester/IDC leader in personalization & CX. BUT: B2C customer engagement platform — domain mismatch with your data infrastructure / enterprise identity expertise. Istanbul HQ. Wouldn't exercise your thought leadership platform or Agent Driven thesis. Ranked Tier 4." },
+        { id: "3", company: "Bazaarvoice", title: "Head of AI Strategy", salary: "TBD — likely $250-300K base", contact: "TBD", status: "red", notes: "PE-owned (Thomas H. Lee Partners since 2021, Marlin before that). 13,000+ brand/retail network is a real moat. Triple-A framework (Accessible, Authentic, Abundant) for AI commerce is smart. BUT: workforce instability signals 2023-2025, cost-cutting culture, potentially flat revenue, domain distance from your core expertise. Ranked Tier 5 — recommend pass." },
+        { id: "4", company: "Hard Fork Capital Partners", title: "Advisor / Partner (Equity)", salary: "Unpaid advisory — negotiate 2-3% equity + deal-by-deal carry (5-15% of success fee on sourced deals)", contact: "Joe Reid, Founding Partner (close friend); Brian Kempf, Partner (Krux/Salesforce alum)", status: "green", notes: "DUAL TRACK with SAP CX role. AI-native M&A advisory, $10-75M revenue companies. exitpath platform. 4-person firm, SF-based. Your 20 years of enterprise data/martech/AI expertise makes you a force multiplier for deal sourcing and buyer-side pattern recognition. Kempf connection through Krux. Joe friendship means informal access to deal flow. Key: structure as light-touch (3-5 hrs/week), disclose to SAP, establish conflict guardrails (no SAP ecosystem deals). Feeds futureofpmm.com content with anonymized M&A case studies." },
+        { id: "5", company: "SAP Business Data Cloud", title: "Current Role (Individual Contributor)", salary: "Current comp — known quantity", contact: "Daniel Yu, CMO (co-author)", status: "yellow", notes: "Stability and known entity. BDC is SAP's hottest growth area. Proximity to Dan Yu and book project. BUT: IC role = lost org leverage. Not driving strategy. Longer you stay IC, harder to re-enter market at SVP level. SAP executive reshuffling (Saueressig → CCO) creates organizational flux. Viable as 6-12 month holding pattern only. Ranked Tier 5." },
+        { id: "6", company: "SAP Customer Experience Division", title: "Data Strategy Lead, Office of the CIO", salary: "Internal transfer — comparable or slight uplift to current comp", contact: "TBD — CIO office leadership", status: "green", notes: "DUAL TRACK with Hard Fork advisory. Best internal option. Defined strategic mandate (data strategy), CIO-level visibility, exposure to customer-facing SAP business. SAP CX getting renewed investment (Emarsys → SAP Engagement Cloud rebrand Feb 2026, AI agents via Joule Studio). Preserves comp/benefits for Lloyd Harbor → North Shore transition. Risk: SAP CX historically weakest franchise, multiple leadership changes. Ranked Tier 2." }
+    ];
+    
+    const STATUS_CONFIG = {
+        green: { label: "Active" },
+        yellow: { label: "On Hold" },
+        red: { label: "Pass" }
+    };
+    
+    let jobs = [];
+    let currentFilter = "all";
+    let editingId = null;
+    let addingNew = false;
+    
+    // Auth
+    (function() {
+        if (sessionStorage.getItem('opp_auth') === 'true') {
+            document.getElementById('authGate').style.display = 'none';
+            document.getElementById('protectedContent').style.display = 'block';
+            loadJobs();
+        }
+        
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            const code = document.getElementById('accessCode').value;
+            if (code === 'ohara2026') {
+                sessionStorage.setItem('opp_auth', 'true');
+                document.getElementById('authGate').style.display = 'none';
+                document.getElementById('protectedContent').style.display = 'block';
+                loadJobs();
+            } else {
+                document.getElementById('authError').style.display = 'block';
+            }
+        });
+        
+        document.getElementById('accessCode').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') document.getElementById('loginBtn').click();
+        });
+        
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            sessionStorage.removeItem('opp_auth');
+            location.reload();
+        });
+    })();
+    
+    function loadJobs() {
+        const stored = localStorage.getItem('opportunity-tracker-data');
+        if (stored) {
+            jobs = JSON.parse(stored);
+        } else {
+            jobs = DEFAULT_JOBS;
+            saveJobs();
+        }
+        render();
+    }
+    
+    function saveJobs() {
+        localStorage.setItem('opportunity-tracker-data', JSON.stringify(jobs));
+    }
+    
+    function updateCounts() {
+        document.getElementById('count-all').textContent = jobs.length;
+        document.getElementById('count-green').textContent = jobs.filter(j => j.status === 'green').length;
+        document.getElementById('count-yellow').textContent = jobs.filter(j => j.status === 'yellow').length;
+        document.getElementById('count-red').textContent = jobs.filter(j => j.status === 'red').length;
+    }
+    
+    function render() {
+        updateCounts();
+        const filtered = currentFilter === 'all' ? jobs : jobs.filter(j => j.status === currentFilter);
+        const list = document.getElementById('jobList');
+        
+        if (filtered.length === 0) {
+            list.innerHTML = '<div class="empty-state">No opportunities in this filter.</div>';
+            return;
+        }
+        
+        list.innerHTML = filtered.map(job => {
+            if (editingId === job.id) return renderEditForm(job);
+            return renderJobCard(job);
+        }).join('');
+        
+        // Add event listeners
+        document.querySelectorAll('.job-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.closest('.edit-btn') || e.target.closest('.job-details')) return;
+                this.classList.toggle('expanded');
+            });
+        });
+        
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                editingId = this.dataset.id;
+                render();
+            });
+        });
+    }
+    
+    function renderJobCard(job) {
+        return `
+            <div class="job-card ${job.status}" data-id="${job.id}">
+                <div class="job-header">
+                    <span class="status-dot ${job.status}"></span>
+                    <div class="job-info">
+                        <div class="job-title-row">
+                            <span class="company-name">${escHtml(job.company)}</span>
+                            <span class="title-sep">—</span>
+                            <span class="job-title">${escHtml(job.title)}</span>
+                        </div>
+                    </div>
+                    <span class="status-label ${job.status} mono">${STATUS_CONFIG[job.status].label}</span>
+                    <span class="expand-arrow">▾</span>
+                </div>
+                <div class="job-details">
+                    <div class="details-grid">
+                        <div>
+                            <div class="detail-label mono">Compensation</div>
+                            <div class="detail-value">${escHtml(job.salary) || '—'}</div>
+                        </div>
+                        <div>
+                            <div class="detail-label mono">Key Contact</div>
+                            <div class="detail-value">${escHtml(job.contact) || '—'}</div>
+                        </div>
+                    </div>
+                    ${job.notes ? `
+                        <div>
+                            <div class="detail-label mono">Notes</div>
+                            <div class="notes-text">${escHtml(job.notes)}</div>
+                        </div>
+                    ` : ''}
+                    <button class="edit-btn" data-id="${job.id}">Edit</button>
+                </div>
+            </div>
+        `;
+    }
+    
+    function renderEditForm(job, isNew = false) {
+        return `
+            <div class="edit-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="mono">Company</label>
+                        <input type="text" id="edit-company" value="${escAttr(job.company)}">
+                    </div>
+                    <div class="form-group">
+                        <label class="mono">Job Title</label>
+                        <input type="text" id="edit-title" value="${escAttr(job.title)}">
+                    </div>
+                    <div class="form-group">
+                        <label class="mono">Compensation</label>
+                        <input type="text" id="edit-salary" value="${escAttr(job.salary)}">
+                    </div>
+                    <div class="form-group">
+                        <label class="mono">Key Contact</label>
+                        <input type="text" id="edit-contact" value="${escAttr(job.contact)}">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom:12px">
+                    <label class="mono">Status</label>
+                    <div class="status-btns">
+                        <button class="status-btn green ${job.status === 'green' ? 'active' : ''}" data-status="green">
+                            <span class="dot" style="background:var(--green)"></span> Active
+                        </button>
+                        <button class="status-btn yellow ${job.status === 'yellow' ? 'active' : ''}" data-status="yellow">
+                            <span class="dot" style="background:var(--yellow)"></span> On Hold
+                        </button>
+                        <button class="status-btn red ${job.status === 'red' ? 'active' : ''}" data-status="red">
+                            <span class="dot" style="background:var(--red)"></span> Pass
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="mono">Notes</label>
+                    <textarea id="edit-notes" rows="5">${escHtml(job.notes)}</textarea>
+                </div>
+                <div class="form-actions">
+                    <button class="save-btn" id="saveBtn">Save</button>
+                    <button class="cancel-btn" id="cancelBtn">Cancel</button>
+                    ${!isNew ? '<button class="delete-btn" id="deleteBtn">Delete</button>' : ''}
+                </div>
+            </div>
+        `;
+    }
+    
+    function escHtml(str) {
+        if (!str) return '';
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    
+    function escAttr(str) {
+        if (!str) return '';
+        return str.replace(/"/g, '&quot;');
+    }
+    
+    // Event Delegation
+    document.getElementById('jobList').addEventListener('click', function(e) {
+        const saveBtn = e.target.closest('#saveBtn');
+        const cancelBtn = e.target.closest('#cancelBtn');
+        const deleteBtn = e.target.closest('#deleteBtn');
+        const statusBtn = e.target.closest('.status-btn');
+        
+        if (statusBtn) {
+            document.querySelectorAll('.status-btn').forEach(b => b.classList.remove('active'));
+            statusBtn.classList.add('active');
+        }
+        
+        if (saveBtn) {
+            const company = document.getElementById('edit-company').value;
+            const title = document.getElementById('edit-title').value;
+            const salary = document.getElementById('edit-salary').value;
+            const contact = document.getElementById('edit-contact').value;
+            const notes = document.getElementById('edit-notes').value;
+            const status = document.querySelector('.status-btn.active')?.dataset.status || 'yellow';
+            
+            if (addingNew) {
+                jobs.push({ id: Date.now().toString(), company, title, salary, contact, notes, status });
+                addingNew = false;
+                document.getElementById('addForm').style.display = 'none';
+                document.getElementById('addForm').innerHTML = '';
+            } else {
+                const idx = jobs.findIndex(j => j.id === editingId);
+                if (idx >= 0) {
+                    jobs[idx] = { ...jobs[idx], company, title, salary, contact, notes, status };
+                }
+                editingId = null;
+            }
+            saveJobs();
+            render();
+        }
+        
+        if (cancelBtn) {
+            if (addingNew) {
+                addingNew = false;
+                document.getElementById('addForm').style.display = 'none';
+                document.getElementById('addForm').innerHTML = '';
+            } else {
+                editingId = null;
+            }
+            render();
+        }
+        
+        if (deleteBtn) {
+            if (confirm('Delete this opportunity?')) {
+                jobs = jobs.filter(j => j.id !== editingId);
+                editingId = null;
+                saveJobs();
+                render();
+            }
+        }
+    });
+    
+    // Add Form
+    document.getElementById('addForm').addEventListener('click', function(e) {
+        const saveBtn = e.target.closest('#saveBtn');
+        const cancelBtn = e.target.closest('#cancelBtn');
+        const statusBtn = e.target.closest('.status-btn');
+        
+        if (statusBtn) {
+            document.querySelectorAll('.status-btn').forEach(b => b.classList.remove('active'));
+            statusBtn.classList.add('active');
+        }
+        
+        if (saveBtn) {
+            const company = document.getElementById('edit-company').value;
+            if (!company) return;
+            const title = document.getElementById('edit-title').value;
+            const salary = document.getElementById('edit-salary').value;
+            const contact = document.getElementById('edit-contact').value;
+            const notes = document.getElementById('edit-notes').value;
+            const status = document.querySelector('.status-btn.active')?.dataset.status || 'yellow';
+            
+            jobs.push({ id: Date.now().toString(), company, title, salary, contact, notes, status });
+            addingNew = false;
+            document.getElementById('addForm').style.display = 'none';
+            document.getElementById('addForm').innerHTML = '';
+            saveJobs();
+            render();
+        }
+        
+        if (cancelBtn) {
+            addingNew = false;
+            document.getElementById('addForm').style.display = 'none';
+            document.getElementById('addForm').innerHTML = '';
+        }
+    });
+    
+    document.getElementById('addBtn').addEventListener('click', function() {
+        addingNew = true;
+        document.getElementById('addForm').style.display = 'block';
+        document.getElementById('addForm').innerHTML = renderEditForm({ company: '', title: '', salary: '', contact: '', notes: '', status: 'yellow' }, true);
+    });
+    
+    // Filters
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFilter = this.dataset.filter;
+            render();
+        });
+    });
+    
+    // Reset
+    document.getElementById('resetBtn').addEventListener('click', function() {
+        if (confirm('Reset to original 6 opportunities? This will erase all changes.')) {
+            jobs = DEFAULT_JOBS;
+            saveJobs();
+            render();
+        }
+    });
+    </script>
+</body>
+</html>
