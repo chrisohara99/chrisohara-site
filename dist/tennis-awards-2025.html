@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Tennis League Awards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter Tight', sans-serif;
+            background: #1a1a2e;
+            color: #f6f1e6;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-family: 'Bodoni Moda', serif;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #f0cf7a;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(246,241,230,.6);
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(4in, 1fr));
+            gap: 20px;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: linear-gradient(180deg, rgba(30,30,40,1) 0%, rgba(20,20,28,1) 100%);
+            border: 2px solid rgba(216,178,90,.4);
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 3in;
+            max-height: 4in;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(216,178,90,.25);
+            padding-bottom: 12px;
+        }
+        
+        .card-emoji {
+            font-size: 32px;
+        }
+        
+        .card-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #f0cf7a;
+            line-height: 1.1;
+        }
+        
+        .card-recipient {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .card-text {
+            font-size: 11px;
+            line-height: 1.5;
+            color: rgba(246,241,230,.85);
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 0;
+            }
+            
+            h1, .subtitle {
+                display: none;
+            }
+            
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(2, 4in);
+                gap: 0.25in;
+                max-width: none;
+            }
+            
+            .card {
+                background: white;
+                border: 2px solid #333;
+                color: black;
+                width: 4in;
+                height: 3in;
+                padding: 15px;
+                page-break-inside: avoid;
+            }
+            
+            .card-title {
+                color: #8B6914;
+            }
+            
+            .card-recipient {
+                color: black;
+            }
+            
+            .card-text {
+                color: #333;
+                font-size: 10px;
+            }
+            
+            .card-header {
+                border-bottom-color: #ccc;
+            }
+        }
+        
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎾 2025 Tennis League Awards 🏆</h1>
+    <p class="subtitle">May 20, 2025 • Print and tape to index cards</p>
+    
+    <div class="cards">
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🔍</span>
+                <span class="card-title">THE MR. MAGOO<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Most Questionable Line Call</small></span>
+            </div>
+            <div class="card-recipient">Bob Calabretta</div>
+            <div class="card-text">In tennis, we rely on the honor system. A player calls the lines, and we trust that call reflects reality. But what happens when revenge clouds a man's vision? When the desire to settle a score turns a ball that was "in by a mile" into a phantom fault? This year, we witnessed the most egregious revenge call in league history when Bob Calabretta, channeling his inner Mr. Magoo, called Henvey's shot out — a shot so clearly in that NASA could have tracked it from orbit.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🌿</span>
+                <span class="card-title">CALL TO THE VAPE PEN<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Most Questionable Substitute</small></span>
+            </div>
+            <div class="card-recipient">Chris Monteleone</div>
+            <div class="card-text">When you need a sub, you call the group chat. When the group chat fails, you call your contacts. When your contacts fail, you apparently call whatever Jeff Spicoli-looking dude happens to be wandering past your house. Chris Monteleone took the concept of "substitution" to new lows this season by inviting a man who had never played in the league, never met anyone in the league, and appeared to be three bong rips deep into his morning.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🎰</span>
+                <span class="card-title">THE SLICE IS RIGHT<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Most Relentless Single-Shot Strategy</small></span>
+            </div>
+            <div class="card-recipient">Husky Ron</div>
+            <div class="card-text">Bob Barker once said, "Come on down!" But nobody told Husky Ron to come on down to the net. Why would he? When you've perfected the art of the slice — that low, skidding, maddening shot that never bounces above knee height — why would you ever hit anything else? Forehand? Slice. Backhand? Slice. Overhead? Believe it or not, slice. This man has turned one shot into an entire philosophy, a lifestyle, a religion.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🦕</span>
+                <span class="card-title">THE LUDDITE II<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Commitment to Antiquity</small></span>
+            </div>
+            <div class="card-recipient">Doug Schmidt</div>
+            <div class="card-text">Last year, I joked that Doug Schmidt's racquet was purchased in 1779. I was being generous. After further carbon dating, we can confirm his equipment predates the Geneva Convention. While other men have embraced modern technology — lighter frames, larger sweet spots, actual strings — Doug continues to wield what appears to be an artifact from the Eisenhower administration. For his ongoing commitment to playing tennis like it's still the Cuban Missile Crisis.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🥩</span>
+                <span class="card-title">THE PORTERHOUSE<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Lifetime Achievement</small></span>
+            </div>
+            <div class="card-recipient">Coach</div>
+            <div class="card-text">Some things in life are certain: death, taxes, and Coach at The Palm every Thursday night. While lesser men might skip a steak dinner for league play, Coach has his priorities in order. A 16-ounce bone-in ribeye waits for no man — certainly not his doubles partners. At this point, The Palm should name a booth after him. For his unwavering dedication to beef over backhand.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🔔</span>
+                <span class="card-title">THE NUTCRACKER<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Most Devastating Below-the-Belt Strike</small></span>
+            </div>
+            <div class="card-recipient">Rob Schetty</div>
+            <div class="card-text">Rob Schetty won "Best Technique" last year for his smooth strokes, soft hands, and elegant court presence. This year, he used that technique to destroy a man's future children. When his forehand connected with Tom Henvey's groin at approximately Mach 2, witnesses report Henvey dropped like a sack of potatoes and remained prostrate for a full ten minutes — long enough for Schetty to serve out the set, check his email, and feel no remorse whatsoever.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🐦</span>
+                <span class="card-title">THE CANARY<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Chirping Hall of Fame</small></span>
+            </div>
+            <div class="card-recipient">Sal Marino</div>
+            <div class="card-text">At what point does an award become a birthright? Salvatore Marino has now won the trash-talking award so many consecutive years that we've retired "Oscar the Grouch" and replaced it with something more fitting. Like a bird that cannot stop singing, Sal chirps from the first serve to the last handshake. The early calls. The celebrations. The commentary. The unsolicited opinions on your backhand. I am inducting him into the CHIRPING HALL OF FAME.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">📏</span>
+                <span class="card-title">THE LONGEST YARD<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Shortest Distance Traveled for a Ball</small></span>
+            </div>
+            <div class="card-recipient">Sal Marino</div>
+            <div class="card-text">Burt Reynolds once fought for every yard. Salvatore Marino will not fight for a single one. This man will watch a ball land six feet away, look at it, and decide it's simply not worth the trip. Corner of the court? That's a different zip code. A ball drifting toward the baseline? Someone else's problem. For his absolute refusal to take unnecessary steps — or any steps. Walk? In this economy?</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🐺</span>
+                <span class="card-title">WOLF OF BROADWAY<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Best Boiler Room Session Dump</small></span>
+            </div>
+            <div class="card-recipient">Sal Marino</div>
+            <div class="card-text">"Sell me this pen." That's what Jordan Belfort asked his trainees. But could Belfort sell a 5-pack of Sal Marino's worst sessions to an unsuspecting buyer? Apparently, yes — if that buyer is Lu Cortese. In a masterclass of salesmanship, Sal managed to offload his least desirable matches onto Lu, convincing him these were premium sessions, exclusive opportunities, can't-miss tennis. Lu bought. Lu learned. And Lu, call us before you sign anything.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">👻</span>
+                <span class="card-title">THE SNUFFALUFFAGUS<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Three-Peat Dynasty of Absence</small></span>
+            </div>
+            <div class="card-recipient">Joe Bonventre</div>
+            <div class="card-text">There are records that stand the test of time: DiMaggio's 56-game hitting streak. Wilt's 100-point game. Joe Bonventre's commitment to not showing up. For the third consecutive year, Joe has achieved what most players cannot — complete invisibility. Did he sign up? Unclear. Did he play? No. Is he here tonight? Of course not. At this point, Joe is less a league member and more an urban legend, a man whose existence we can no longer verify.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🌿</span>
+                <span class="card-title">COUSIN SPIKE II<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Still Late, Still Elevated</small></span>
+            </div>
+            <div class="card-recipient">Adam Feldman</div>
+            <div class="card-text">Last year, we gave Adam Feldman the Cousin Spike award for showing up 10 minutes late despite owning cars with sub-3-second 0-60 times. Did he learn? Did he adjust? Did he set an earlier alarm? Absolutely not. This year, Adam has doubled down — still 10 minutes late, still arriving looking like he just emerged from a Grateful Dead parking lot. We've stopped being annoyed and started being impressed by his consistency.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🎯</span>
+                <span class="card-title">"ARE WE GONNA PLAY THIS WAY?"<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Most Predictable Complaint</small></span>
+            </div>
+            <div class="card-recipient">Lu Cortese</div>
+            <div class="card-text">Every league has its traditions. The handshake. The warmup. The post-match drink. And Lu Cortese asking "Are we gonna play this way?" every single time someone hits a lob. Lu believes the lob is a coward's shot — a cheap trick unworthy of true competitors. Unfortunately for Lu, the rest of us disagree. So for another season of audible disgust at the most legal shot in tennis. Yes, Lu. We are.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🥋</span>
+                <span class="card-title">THE COBRA KAI<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Most Unorthodox Backhand</small></span>
+            </div>
+            <div class="card-recipient">Cousin Sonny</div>
+            <div class="card-text">In 1974, a young man named Daniel LaRusso learned karate from Mr. Miyagi. "Wax on, wax off," he was told. Cousin Sonny apparently learned tennis the same way — from a 1970s martial arts VHS tape. His backhand defies physics, biomechanics, and the Geneva Convention. It is less a tennis stroke and more a defensive combat maneuver — part chop, part block, part spiritual awakening. Sweep the leg.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🏆</span>
+                <span class="card-title">THE GOLDEN RACQUET<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Friend of the League</small></span>
+            </div>
+            <div class="card-recipient">Tom Henvey</div>
+            <div class="card-text">Running a men's doubles league is a thankless job. Scheduling. Substitutions. Complaints. Egos. Navigating the group chat like a diplomat in a war zone. This year, while I stepped back from league operations, one man stepped up — handling the logistics, managing the personalities, and keeping the whole thing from falling apart. For his leadership, dedication, and tireless service to this league. Thank you, Tommy.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🎾</span>
+                <span class="card-title">TENNIS WHORE<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Lifetime Achievement</small></span>
+            </div>
+            <div class="card-recipient">Tom Henvey</div>
+            <div class="card-text">Some men play tennis. Tom Henvey IS tennis. For yet another year, Henvey has logged more court hours than most of us log at our actual jobs. He takes every session, subs into every open slot, and will play through injury, exhaustion, and the protests of his orthopedist. At this point, HIT should name a court after him — or at least give him a parking spot. The league's hardest charger and most prolific player.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🦨</span>
+                <span class="card-title">PEPE LE PEW<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Most Generous with Personal Aroma</small></span>
+            </div>
+            <div class="card-recipient">Connell Boyle</div>
+            <div class="card-text">One of the few downsides of an active and athletic lifestyle is the unpleasant specter of body odor. When you play hard, sometimes you start to smell like a walking hockey bag. In this league, one player is honored for his propensity to share his aroma with his courtmates shamelessly. For reminding us all what a men's locker room smells like — on an outdoor court.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🪑</span>
+                <span class="card-title">THE JV BLUES<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Most Court 1 Anxiety</small></span>
+            </div>
+            <div class="card-recipient">Anthony Centrella</div>
+            <div class="card-text">In high school, every athlete dreamed of making varsity. The prestige. The letterman jacket. The respect. For Anthony Centrella, that dream lives on — and remains painfully unfulfilled. Court 1 is our varsity. Court 2 is... not. And Anthony knows exactly which court he's been assigned to, and he is NOT okay with it. Every scheduling email is a fresh wound. Every Court 1 lineup he's excluded from is a referendum on his worth as a player and a man. Keep grinding, Anthony. Your day will come. Probably.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">🦊</span>
+                <span class="card-title">CRAZY LIKE A FOX<br><small style="font-weight:400;color:rgba(246,241,230,.6)">The Don of the Quick Serve</small></span>
+            </div>
+            <div class="card-recipient">Gavin Meier</div>
+            <div class="card-text">In 1980s Little Italy, there was always a guy they called "Crazy Don" — a man who seemed unhinged, unpredictable, maybe a little touched. But here's the thing: he wasn't crazy. He was crazy like a fox. Gavin channels this same energy. The muttering. The giggles. The thousand-yard stare. You think he's lost in his own world — until his second serve is past you before his first serve stops bouncing. Keep 'em guessing, Don.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-emoji">😇</span>
+                <span class="card-title">MR. NICE GUY<br><small style="font-weight:400;color:rgba(246,241,230,.6)">Hall of Fame</small></span>
+            </div>
+            <div class="card-recipient">Lloyd Gitler</div>
+            <div class="card-text">Every year, I try to find something — anything — to roast Lloyd Gitler about. A bad call. A complaint. A sideways glance. And every year, I come up empty. Lloyd is too nice for this league. He's the kind of guy who apologizes when YOU hit HIM with a ball. Who compliments your serve after you double fault. In a league full of trash talkers and revenge callers, Lloyd stands alone as a beacon of sportsmanship. We don't deserve you, Lloyd.</div>
+        </div>
+        
+    </div>
+</body>
+</html>
