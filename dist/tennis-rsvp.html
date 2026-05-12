@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tennis Awards Night RSVP — May 20th, 6:30pm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,800;1,6..96,500&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --gold:#d8b25a;
+            --gold-bright:#f0cf7a;
+            --ink:#0d0d10;
+            --paper:#f6f1e6;
+            --line:rgba(216,178,90,.35);
+        }
+        *{box-sizing:border-box}
+        html,body{margin:0;padding:0;min-height:100%}
+        body{
+            font-family:'Inter Tight',system-ui,sans-serif;
+            color:var(--paper);
+            background:#000;
+            -webkit-font-smoothing:antialiased;
+        }
+        /* Backdrop: photo + dark gradient + grain */
+        .stage{
+            position:relative;
+            min-height:100vh;
+            overflow:hidden;
+            isolation:isolate;
+        }
+        .stage::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background-image:url('tennis-bg.jpg');
+            background-size:cover;
+            background-position:center 30%;
+            filter:saturate(.85) contrast(1.05);
+            z-index:-3;
+        }
+        .stage::after{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(0,0,0,.55) 0%, rgba(0,0,0,.25) 35%, rgba(0,0,0,.85) 100%),
+                linear-gradient(180deg, rgba(13,13,16,.55) 0%, rgba(13,13,16,.35) 40%, rgba(13,13,16,.92) 100%);
+            z-index:-2;
+        }
+        .grain{
+            position:absolute;
+            inset:0;
+            z-index:-1;
+            pointer-events:none;
+            opacity:.18;
+            mix-blend-mode:overlay;
+            background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.85 0 0 0 0 0.6 0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        }
+        /* Header */
+        header{
+            padding:42px 28px 0;
+            text-align:center;
+            position:relative;
+        }
+        .eyebrow{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            font-size:11px;
+            letter-spacing:.32em;
+            text-transform:uppercase;
+            color:var(--gold-bright);
+            border:1px solid var(--line);
+            padding:8px 14px;
+            border-radius:999px;
+            background:rgba(13,13,16,.55);
+            backdrop-filter:blur(6px);
+        }
+        .eyebrow .dot{
+            width:6px;height:6px;border-radius:50%;
+            background:var(--gold-bright);
+            box-shadow:0 0 12px var(--gold-bright);
+        }
+        h1{
+            font-family:'Bodoni Moda', serif;
+            font-weight:800;
+            font-size:clamp(34px, 6.5vw, 64px);
+            line-height:1.02;
+            letter-spacing:-.01em;
+            margin:18px auto 6px;
+            max-width:900px;
+            text-shadow:0 4px 30px rgba(0,0,0,.6);
+        }
+        h1 em{
+            font-style:italic;
+            font-weight:500;
+            color:var(--gold-bright);
+            background:linear-gradient(180deg,#f5d684 0%, #b88a36 100%);
+            -webkit-background-clip:text;
+            background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+        .meta{
+            display:flex;
+            gap:18px;
+            justify-content:center;
+            flex-wrap:wrap;
+            margin-top:14px;
+            font-size:13px;
+            letter-spacing:.18em;
+            text-transform:uppercase;
+            color:rgba(246,241,230,.85);
+        }
+        .meta span{display:inline-flex;align-items:center;gap:8px}
+        .meta svg{width:14px;height:14px;stroke:var(--gold-bright);fill:none;stroke-width:1.6}
+        /* Card */
+        main{
+            max-width:620px;
+            margin:48px auto 60px;
+            padding:0 22px;
+        }
+        .card{
+            position:relative;
+            background:linear-gradient(180deg, rgba(18,18,22,.92) 0%, rgba(10,10,12,.94) 100%);
+            border:1px solid var(--line);
+            border-radius:6px;
+            padding:34px 30px 30px;
+            box-shadow:
+                0 30px 80px -20px rgba(0,0,0,.7),
+                0 0 0 1px rgba(216,178,90,.08) inset;
+        }
+        .card::before{
+            content:"";
+            position:absolute;
+            inset:8px;
+            border:1px solid rgba(216,178,90,.18);
+            border-radius:3px;
+            pointer-events:none;
+        }
+        .card-title{
+            font-family:'Bodoni Moda', serif;
+            font-size:22px;
+            letter-spacing:.02em;
+            margin:0 0 4px;
+        }
+        .card-sub{
+            font-size:13px;
+            color:rgba(246,241,230,.6);
+            margin:0 0 24px;
+        }
+        label.field{display:block; margin-bottom:14px}
+        .field-label{
+            display:block;
+            font-size:11px;
+            letter-spacing:.28em;
+            text-transform:uppercase;
+            color:var(--gold-bright);
+            margin-bottom:8px;
+        }
+        input[type=text], input[type=email]{
+            width:100%;
+            padding:13px 14px;
+            background:rgba(246,241,230,.04);
+            border:1px solid rgba(246,241,230,.12);
+            border-radius:3px;
+            color:var(--paper);
+            font-family:inherit;
+            font-size:15px;
+            transition:border-color .2s, background .2s;
+        }
+        input[type=text]:focus, input[type=email]:focus{
+            outline:none;
+            border-color:var(--gold-bright);
+            background:rgba(216,178,90,.06);
+        }
+        fieldset{
+            border:none;
+            padding:0;
+            margin:6px 0 22px;
+        }
+        legend{
+            font-size:11px;
+            letter-spacing:.28em;
+            text-transform:uppercase;
+            color:var(--gold-bright);
+            margin-bottom:10px;
+        }
+        .radio{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            padding:14px 14px;
+            border:1px solid rgba(246,241,230,.12);
+            border-radius:3px;
+            background:rgba(246,241,230,.03);
+            cursor:pointer;
+            margin-bottom:8px;
+            transition:all .2s;
+        }
+        .radio:hover{
+            border-color:rgba(216,178,90,.5);
+            background:rgba(216,178,90,.06);
+        }
+        .radio input{
+            appearance:none;
+            margin:0;
+            width:18px;
+            height:18px;
+            border-radius:50%;
+            border:1.5px solid rgba(246,241,230,.4);
+            position:relative;
+            flex:0 0 18px;
+        }
+        .radio input:checked{
+            border-color:var(--gold-bright);
+        }
+        .radio input:checked::after{
+            content:"";
+            position:absolute;
+            inset:3px;
+            background:var(--gold-bright);
+            border-radius:50%;
+            box-shadow:0 0 8px var(--gold-bright);
+        }
+        .radio:has(input:checked){
+            border-color:var(--gold-bright);
+            background:rgba(216,178,90,.09);
+        }
+        .radio-text{font-size:14.5px}
+        textarea{
+            width:100%;
+            padding:13px 14px;
+            min-height:84px;
+            resize:vertical;
+            background:rgba(246,241,230,.04);
+            border:1px solid rgba(246,241,230,.12);
+            border-radius:3px;
+            color:var(--paper);
+            font-family:inherit;
+            font-size:14.5px;
+        }
+        textarea:focus{
+            outline:none;
+            border-color:var(--gold-bright);
+            background:rgba(216,178,90,.06);
+        }
+        button{
+            width:100%;
+            margin-top:18px;
+            padding:16px 20px;
+            background:linear-gradient(180deg, #f0cf7a 0%, #c89a3e 100%);
+            color:#1a1206;
+            font-family:'Bodoni Moda',serif;
+            font-weight:600;
+            font-size:15px;
+            letter-spacing:.22em;
+            text-transform:uppercase;
+            border:none;
+            border-radius:3px;
+            cursor:pointer;
+            box-shadow:0 8px 24px -8px rgba(216,178,90,.55);
+            transition:transform .15s, box-shadow .2s;
+        }
+        button:hover{
+            transform:translateY(-1px);
+            box-shadow:0 12px 30px -8px rgba(216,178,90,.7);
+        }
+        button:active{
+            transform:translateY(0);
+        }
+        footer{
+            text-align:center;
+            padding:0 22px 36px;
+            font-size:11px;
+            letter-spacing:.3em;
+            text-transform:uppercase;
+            color:rgba(246,241,230,.5);
+        }
+        footer .sep{margin:0 12px; color:var(--gold)}
+        /* Confirmation */
+        .done{
+            text-align:center;
+            padding:14px 4px 6px;
+        }
+        .done svg{width:46px;height:46px;stroke:var(--gold-bright);fill:none;stroke-width:1.5;margin-bottom:10px}
+        .done h3{font-family:'Bodoni Moda',serif;font-size:22px;margin:0 0 6px}
+        .done p{color:rgba(246,241,230,.7);font-size:14px;margin:0}
+        @media (max-width:520px){
+            header{padding-top:28px}
+            main{margin-top:32px}
+            .card{padding:26px 20px}
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="grain"></div>
+
+        <header>
+            <span class="eyebrow"><span class="dot"></span>You're Invited</span>
+            <h1>Tennis Awards Night <em>RSVP</em></h1>
+            <div class="meta">
+                <span>
+                    <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+                    May 20th
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    6:30 pm
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                    Trophies &amp; Toasts
+                </span>
+            </div>
+        </header>
+
+        <main>
+            <div class="card" id="card">
+                <h2 class="card-title">Reserve your spot</h2>
+                <p class="card-sub">A quick RSVP so we can plan the trophies, table, and pours.</p>
+
+                <form id="rsvp" name="tennis-rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="tennis-rsvp" />
+                    <p style="display:none"><input name="bot-field" /></p>
+                    
+                    <label class="field">
+                        <span class="field-label">Name</span>
+                        <input type="text" name="name" required placeholder="Your name" autocomplete="name"/>
+                    </label>
+
+                    <label class="field">
+                        <span class="field-label">Email</span>
+                        <input type="email" name="email" required placeholder="you@example.com" autocomplete="email"/>
+                    </label>
+
+                    <fieldset>
+                        <legend>Attendance</legend>
+                        <label class="radio">
+                            <input type="radio" name="rsvp" value="yes" required />
+                            <span class="radio-text">I am a real American and I will attend</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rsvp" value="no" />
+                            <span class="radio-text">I already have plans to get pegged that night, so I won't attend</span>
+                        </label>
+                    </fieldset>
+
+                    <label class="field">
+                        <span class="field-label">Note <span style="color:rgba(246,241,230,.4);letter-spacing:.1em">(optional)</span></span>
+                        <textarea name="note" placeholder="Bringing a guest? Dietary notes? Trash talk?"></textarea>
+                    </label>
+
+                    <button type="submit">Send RSVP</button>
+                </form>
+
+                <div class="done" id="done" style="display:none">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+                    <h3>Got it — thank you</h3>
+                    <p>See you on the 20th.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            Tennis Awards Night <span class="sep">·</span> May 20, 2026 <span class="sep">·</span> 6:30 pm
+        </footer>
+    </div>
+
+    <script>
+        // Handle form submission with AJAX for smooth UX
+        document.getElementById('rsvp').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                form.style.display = 'none';
+                document.getElementById('done').style.display = 'block';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
