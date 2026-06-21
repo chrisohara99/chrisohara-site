@@ -292,64 +292,6 @@
             main{margin-top:32px}
             .card{padding:26px 20px}
         }
-        /* Highlights Section */
-        .highlights{
-            max-width:720px;
-            margin:0 auto 48px;
-            padding:0 22px;
-            text-align:center;
-        }
-        .highlights-title{
-            font-family:'Bodoni Moda', serif;
-            font-size:24px;
-            font-weight:600;
-            color:var(--gold-bright);
-            margin:0 0 24px;
-            letter-spacing:.05em;
-        }
-        .trophy-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-            gap:16px;
-        }
-        .trophy-item{
-            background:rgba(18,18,22,.85);
-            border:1px solid var(--line);
-            border-radius:4px;
-            padding:18px 14px;
-            display:flex;
-            flex-direction:column;
-            gap:4px;
-        }
-        .trophy-icon{
-            font-size:28px;
-            margin-bottom:4px;
-        }
-        .trophy-name{
-            font-family:'Bodoni Moda', serif;
-            font-size:14px;
-            font-weight:600;
-            color:var(--gold-bright);
-            letter-spacing:.08em;
-            text-transform:uppercase;
-        }
-        .trophy-winner{
-            font-size:15px;
-            color:var(--paper);
-            font-weight:500;
-        }
-        .trophy-desc{
-            font-size:12px;
-            color:rgba(246,241,230,.5);
-            font-style:italic;
-        }
-        .highlights-tease{
-            margin-top:24px;
-            font-size:14px;
-            color:rgba(246,241,230,.6);
-            letter-spacing:.15em;
-            text-transform:uppercase;
-        }
     </style>
 </head>
 <body>
@@ -357,7 +299,7 @@
         <div class="grain"></div>
 
         <header>
-            <span class="eyebrow"><span class="dot"></span>You're Invited</span>
+            <span class="eyebrow"><span class="dot" style="background:#4ade80;box-shadow:0 0 8px #4ade80"></span>The Event Is On!</span>
             <h1>Tennis Awards Night <em>RSVP</em></h1>
             <div class="meta">
                 <span>
@@ -366,11 +308,11 @@
                 </span>
                 <span>
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                    6:30 pm Cocktails
+                    6:30 pm Drinks
                 </span>
                 <span>
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                    8:00 pm Dinner &amp; Awards
+                    7:30 pm Dinner · Ceremony to follow
                 </span>
             </div>
         </header>
@@ -417,57 +359,13 @@
                 <div class="done" id="done" style="display:none">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
                     <h3>Got it — thank you</h3>
-                    <p>See you on June 24th!</p>
+                    <p>See you on the 24th!</p>
                 </div>
             </div>
         </main>
 
-        <!-- Last Year's Highlights -->
-        <section class="highlights">
-            <h2 class="highlights-title">Last Year's Honors</h2>
-            <div class="trophy-grid">
-                <div class="trophy-item">
-                    <span class="trophy-icon">🏆</span>
-                    <span class="trophy-name">The Snuffaluffagus</span>
-                    <span class="trophy-winner">Joe Bonventre</span>
-                    <span class="trophy-desc">Signed up for one session. Missed it.</span>
-                </div>
-                <div class="trophy-item">
-                    <span class="trophy-icon">🎤</span>
-                    <span class="trophy-name">Oscar the Grouch</span>
-                    <span class="trophy-winner">Sal Marino</span>
-                    <span class="trophy-desc">Biggest trash talker. Again.</span>
-                </div>
-                <div class="trophy-item">
-                    <span class="trophy-icon">🥩</span>
-                    <span class="trophy-name">The Porterhouse</span>
-                    <span class="trophy-winner">Coach</span>
-                    <span class="trophy-desc">Missing matches for The Palm.</span>
-                </div>
-                <div class="trophy-item">
-                    <span class="trophy-icon">🦴</span>
-                    <span class="trophy-name">Spleen Hunter</span>
-                    <span class="trophy-winner">Tom Henvey</span>
-                    <span class="trophy-desc">Will hit you as hard as possible.</span>
-                </div>
-                <div class="trophy-item">
-                    <span class="trophy-icon">🏛️</span>
-                    <span class="trophy-name">The Luddite</span>
-                    <span class="trophy-winner">Doug Schmidt</span>
-                    <span class="trophy-desc">Racquet purchased in 1779.</span>
-                </div>
-                <div class="trophy-item">
-                    <span class="trophy-icon">🐟</span>
-                    <span class="trophy-name">Charlie the Tuna</span>
-                    <span class="trophy-winner">Sal Marino</span>
-                    <span class="trophy-desc">Entangled in the net. Twice.</span>
-                </div>
-            </div>
-            <p class="highlights-tease">New trophies. New roasts. June 24th.</p>
-        </section>
-
         <footer>
-            Tennis Awards Night <span class="sep">·</span> Wed, June 24, 2026 <span class="sep">·</span> 6:30 pm Cocktails, 8:00 pm Dinner
+            Tennis Awards Night <span class="sep">·</span> Wed, June 24, 2026 <span class="sep">·</span> 6:30 pm Drinks, 7:30 pm Dinner, Ceremony to follow
         </footer>
     </div>
 
